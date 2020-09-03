@@ -99,7 +99,7 @@ def make_module(
 		module: ModuleType,
 		attr_list: Iterable[str] = (),
 		first_party_imports: Iterable[str] = (),
-		converter = Converter()
+		converter=Converter()
 		) -> bool:
 	"""
 	Create type stubs for a module.
@@ -150,7 +150,7 @@ def make_package(
 		name: str,
 		module: ModuleType,
 		attr_list: Iterable[str] = (),
-		converter = Converter(),
+		converter=Converter(),
 		) -> bool:
 	"""
 	Create type stubs for a module.
@@ -168,7 +168,7 @@ def make_package(
 	return make_module(f"{name}.__init__", module, attr_list, converter=converter)
 
 
-def walk_attrs(module: ModuleType, attr_name, converter = Converter()) -> str:
+def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 	buf = []
 
 	if not is_dunder(attr_name):

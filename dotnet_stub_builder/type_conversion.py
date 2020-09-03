@@ -29,7 +29,6 @@ from typing import Dict, Optional
 
 __all__ = ["generic_type_regex", "Converter"]
 
-
 generic_type_regex = re.compile(r"^([A-Za-z_.]+)(`[0-9])?\[([A-Za-z_.,]+)]$")
 
 

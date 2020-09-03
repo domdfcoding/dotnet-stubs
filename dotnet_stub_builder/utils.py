@@ -29,7 +29,7 @@ General utility functions.
 # stdlib
 import functools
 from textwrap import indent
-from typing import List, Iterable
+from typing import Iterable, List
 
 # 3rd party
 from orderedset import OrderedSet  # type: ignore
