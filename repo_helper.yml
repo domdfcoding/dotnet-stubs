@@ -1,0 +1,29 @@
+# Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper
+---
+modname: 'dotnet-stubs'
+import_name: dotnet_stub_builder
+copyright_years: 2020
+author: 'Dominic Davis-Foster'
+email: 'dominic@davis-foster.co.uk'
+username: 'domdfcoding'
+version: '0.0.0'
+license: 'MIT'
+short_desc: 'Incomplete, and probably incorrect, stubs for .NET.'
+
+enable_conda: False
+enable_tests: False
+enable_docs: False
+
+stubs_package: true
+
+extras_require:
+  builder:
+    - pythonnet
+    - domdf_python_tools>=0.5.0
+    - orderedset
+
+exclude_files:
+  - tox
+  - manifest
+  - setup_cfg
+  - setup

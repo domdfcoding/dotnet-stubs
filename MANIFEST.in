@@ -1,0 +1,7 @@
+include __pkginfo__.py
+include LICENSE
+include requirements.txt
+prune **/__pycache__
+recursive-include dotnet_stub_builder *.pyi
+include dotnet_stub_builder/py.typed
+graft System-stubs
