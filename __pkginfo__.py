@@ -39,7 +39,7 @@ __copyright__ = """
 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 modname = "dotnet-stubs"
 pypi_name = "dotnet-stubs"
 import_name = "dotnet_stub_builder"

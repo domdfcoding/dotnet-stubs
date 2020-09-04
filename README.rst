@@ -69,7 +69,7 @@ dotnet-stubs
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/dotnet-stubs
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/dotnet-stubs/v0.0.3
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/dotnet-stubs/v0.0.4
 	:target: https://github.com/domdfcoding/dotnet-stubs/pulse
 	:alt: GitHub commits since tagged version
 
