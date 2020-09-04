@@ -217,10 +217,10 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 								"instance property must be accessed through a class instance",
 								"property cannot be read",
 								}:
-							buf.append(tab_in(f"\n@property\ndef {child_attr_name}(self): ..."))
+							buf.append(tab_in(f"\n@property\ndef {child_attr_name}(self): ...\n"))
 							buf.append(
 									tab_in(
-											f"\n@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ..."
+											f"@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ...\n"
 											)
 									)
 							continue
