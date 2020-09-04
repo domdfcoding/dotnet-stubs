@@ -217,10 +217,10 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 								"instance property must be accessed through a class instance",
 								"property cannot be read",
 								}:
-							buf.append(tab_in(f"@property\ndef {child_attr_name}(self): ...\n"))
+							buf.append(tab_in(f"\n@property\ndef {child_attr_name}(self): ..."))
 							buf.append(
 									tab_in(
-											f"@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ...\n"
+											f"\n@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ..."
 											)
 									)
 							continue
@@ -259,11 +259,11 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 						buf.append(line)
 
 					elif arguments is None:
-						buf.append(tab_in(f"def {child_attr_name}(self, *args, **kwargs) -> {return_type}: ...\n"))
+						buf.append(tab_in(f"def {child_attr_name}(self, *args, **kwargs) -> {return_type}: ..."))
 
 					elif not arguments:
 						# i.e. takes no arguments
-						buf.append(tab_in(f"def {child_attr_name}(self) -> {return_type}: ...\n"))
+						buf.append(tab_in(f"def {child_attr_name}(self) -> {return_type}: ..."))
 
 		buf.append("")
 
