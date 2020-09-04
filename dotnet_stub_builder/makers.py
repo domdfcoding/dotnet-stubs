@@ -30,7 +30,9 @@ from typing import Any, Iterable, List, Optional
 
 # 3rd party
 import clr  # type: ignore
+import isort
 from domdf_python_tools.paths import PathPlus
+from isort import Config
 
 # this package
 from dotnet_stub_builder.type_conversion import Converter
@@ -42,6 +44,8 @@ clr.AddReference("System")
 import System  # type: ignore
 
 __all__ = ["make_imports", "make_module", "make_package", "walk_attrs"]
+
+isort_config = Config(force_single_line=True)
 
 SYSTEM_MODULES = [
 		"System",
@@ -141,7 +145,7 @@ def make_module(
 
 		buf.append(stub_code)
 
-	stub_file.write_clean("\n".join(buf))
+	stub_file.write_clean(isort.code("\n".join(buf), config=isort_config))
 
 	return True
 

@@ -21,6 +21,7 @@ extras_require:
     - pythonnet
     - domdf_python_tools>=0.5.1
     - orderedset
+    - isort>=5.0.0
 
 exclude_files:
   - tox
