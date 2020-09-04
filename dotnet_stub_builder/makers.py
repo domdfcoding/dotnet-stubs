@@ -214,7 +214,11 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 								"property cannot be read",
 								}:
 							buf.append(tab_in(f"@property\ndef {child_attr_name}(self): ...\n"))
-							buf.append(tab_in(f"@{child_attr_name}.setter\ndef {child_attr_name}(self): ...\n"))
+							buf.append(
+									tab_in(
+											f"@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ...\n"
+											)
+									)
 							continue
 						elif str(e) == "instance attribute must be accessed through a class instance":
 							print(f"{e.__class__.__name__}: '{e}' occurred for {attr_name}.{child_attr_name}")

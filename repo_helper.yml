@@ -8,7 +8,7 @@ email: 'dominic@davis-foster.co.uk'
 username: 'domdfcoding'
 version: '0.0.0'
 license: 'MIT'
-short_desc: 'Incomplete, and probably incorrect, stubs for .NET.'
+short_desc: 'Incomplete, and probably incorrect, stubs for .NET'
 
 enable_conda: False
 enable_tests: False
@@ -19,7 +19,7 @@ stubs_package: true
 extras_require:
   builder:
     - pythonnet
-    - domdf_python_tools>=0.5.0
+    - domdf_python_tools>=0.5.1
     - orderedset
 
 exclude_files:

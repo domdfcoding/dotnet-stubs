@@ -4,7 +4,7 @@ dotnet-stubs
 
 .. start short_desc
 
-**Incomplete, and probably incorrect, stubs for .NET.**
+**Incomplete, and probably incorrect, stubs for .NET**
 
 .. end short_desc
 

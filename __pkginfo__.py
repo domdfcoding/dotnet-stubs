@@ -44,14 +44,14 @@ modname = "dotnet-stubs"
 pypi_name = "dotnet-stubs"
 import_name = "dotnet_stub_builder"
 __license__ = "MIT License"
-short_desc = 'Incomplete, and probably incorrect, stubs for .NET.'
+short_desc = 'Incomplete, and probably incorrect, stubs for .NET'
 __author__ = author = 'Dominic Davis-Foster'
 author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/dotnet-stubs"
 repo_root = pathlib.Path(__file__).parent
 install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
-extras_require = {'builder': ['pythonnet', 'domdf_python_tools>=0.5.0', 'orderedset'], 'all': ['domdf_python_tools>=0.5.0', 'orderedset', 'pythonnet']}
+extras_require = {'builder': ['pythonnet', 'domdf_python_tools>=0.5.1', 'orderedset'], 'all': ['domdf_python_tools>=0.5.1', 'orderedset', 'pythonnet']}
 
 
 
