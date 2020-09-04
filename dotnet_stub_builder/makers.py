@@ -195,7 +195,7 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 			if "__init__" not in child_attrs:
 				child_attrs.append("__init__")
 
-			for child_attr_name in child_attrs:
+			for child_attr_name in sorted(child_attrs):
 				if (not is_dunder(child_attr_name) or child_attr_name == "__init__") and child_attr_name not in {
 						"None",
 						"value__",
@@ -248,12 +248,10 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 						for idx, argument in enumerate(arguments.split(", ")):
 							signature.append(f"{'_' * (idx + 1)}: {converter.convert_type(argument)}")
 
-						line = tab_in(
-								f"def {child_attr_name}(self, {', '.join(signature)}) -> {return_type}: ...\n"
-								)
+						line = tab_in(f"def {child_attr_name}(self, {', '.join(signature)}) -> {return_type}: ...")
 						if len(line) > 92:
 							sig = ',\n        '.join(("self", *signature, ''))
-							line = tab_in(f"def {child_attr_name}({sig}) -> {return_type}: ...\n")
+							line = tab_in(f"\ndef {child_attr_name}({sig}) -> {return_type}: ...\n")
 						buf.append(line)
 
 					elif arguments is None:
