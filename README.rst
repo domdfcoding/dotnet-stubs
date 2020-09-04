@@ -102,3 +102,10 @@ To install with ``pip``:
 	$ python -m pip install dotnet-stubs
 
 .. end installation
+
+
+Stubs are build using the ``dotnet_stub_builder`` that ships alongside these stubs. Is has additional dependencies, which can be installed using the ``builder`` extra:
+
+.. code-block:: bash
+
+	$ python -m pip install dotnet-stubs[bash]
