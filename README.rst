@@ -108,4 +108,4 @@ Stubs are build using the ``dotnet_stub_builder`` that ships alongside these stu
 
 .. code-block:: bash
 
-	$ python -m pip install dotnet-stubs[bash]
+	$ python -m pip install dotnet-stubs[builder]
