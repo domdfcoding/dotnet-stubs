@@ -47,7 +47,7 @@ import System  # type: ignore
 __all__ = ["make_imports", "make_module", "make_package", "walk_attrs"]
 
 isort_config = Config(force_single_line=True)
-method_alphabet = f"_{string.ascii_uppercase}{string.ascii_lowercase}"
+method_alphabet = f"_{string.ascii_uppercase}{string.ascii_lowercase}0123456789"
 
 SYSTEM_MODULES = [
 		"System",
