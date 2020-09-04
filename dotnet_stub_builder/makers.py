@@ -25,6 +25,7 @@
 
 # stdlib
 import re
+import string
 from types import FunctionType, ModuleType
 from typing import Any, Iterable, List, Optional
 
@@ -46,6 +47,7 @@ import System  # type: ignore
 __all__ = ["make_imports", "make_module", "make_package", "walk_attrs"]
 
 isort_config = Config(force_single_line=True)
+method_alphabet = f"_{string.ascii_uppercase}{string.ascii_lowercase}"
 
 SYSTEM_MODULES = [
 		"System",
@@ -134,7 +136,8 @@ def make_module(
 		else:
 			buf.append("from System.ComponentModel import MarshalByValueComponent")
 
-	buf.append("\n")
+	buf.append('')
+	buf.append('')
 
 	for attr_name in dedup(attr_list):
 		stub_code = walk_attrs(module, attr_name, converter=converter)
@@ -191,15 +194,17 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 			bases = list(filter(lambda x: x is Any, bases))
 
 			if bases:
-				buf.append(f"class {attr_name}({', '.join(bases)}):\n")
+				buf.append(f"class {attr_name}({', '.join(bases)}):")
 			else:
-				buf.append(f"class {attr_name}:\n")
+				buf.append(f"class {attr_name}:")
 
 			child_attrs = dir(obj)
 			if "__init__" not in child_attrs:
 				child_attrs.append("__init__")
 
-			for child_attr_name in sorted(child_attrs):
+			child_attrs.sort(key=lambda attr: [method_alphabet.index(letter) for letter in attr])
+
+			for child_attr_name in child_attrs:
 				if (not is_dunder(child_attr_name) or child_attr_name == "__init__") and child_attr_name not in {
 						"None",
 						"value__",
@@ -210,6 +215,7 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 						"NameImpl",
 						"PositionImpl",
 						}:
+
 					try:
 						child_obj = getattr(obj, child_attr_name)
 					except TypeError as e:
@@ -217,16 +223,24 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 								"instance property must be accessed through a class instance",
 								"property cannot be read",
 								}:
-							buf.append(tab_in(f"\n@property\ndef {child_attr_name}(self): ...\n"))
-							buf.append(
-									tab_in(
-											f"@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ...\n"
-											)
-									)
+
+							if buf[-1]:
+								buf.append('')
+
+							buf.extend([
+									tab_in("@property"),
+									tab_in(f"def {child_attr_name}(self): ..."),
+									'',
+									tab_in(f"@{child_attr_name}.setter"),
+									tab_in(f"def {child_attr_name}(self, value): ..."),
+									'',
+									])
 							continue
+
 						elif str(e) == "instance attribute must be accessed through a class instance":
 							print(f"{e.__class__.__name__}: '{e}' occurred for {attr_name}.{child_attr_name}")
 							continue
+
 						else:
 							raise e
 
@@ -255,8 +269,15 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 						line = tab_in(f"def {child_attr_name}(self, {', '.join(signature)}) -> {return_type}: ...")
 						if len(line) > 92:
 							sig = ',\n        '.join(("self", *signature, ''))
-							line = tab_in(f"\ndef {child_attr_name}({sig}) -> {return_type}: ...\n")
-						buf.append(line)
+
+							if buf[-1]:
+								buf.append('')
+
+							line = tab_in(f"def {child_attr_name}({sig}) -> {return_type}: ...")
+							buf.append(line)
+							buf.append('')
+						else:
+							buf.append(line)
 
 					elif arguments is None:
 						buf.append(tab_in(f"def {child_attr_name}(self, *args, **kwargs) -> {return_type}: ..."))
