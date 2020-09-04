@@ -195,8 +195,10 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 
 			if bases:
 				buf.append(f"class {attr_name}({', '.join(bases)}):")
+				buf.append('')
 			else:
 				buf.append(f"class {attr_name}:")
+				buf.append('')
 
 			child_attrs = dir(obj)
 			if "__init__" not in child_attrs:
