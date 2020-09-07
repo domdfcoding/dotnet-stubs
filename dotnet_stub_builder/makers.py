@@ -25,9 +25,8 @@
 
 # stdlib
 import re
-import string
 from types import FunctionType, ModuleType
-from typing import Any, Iterable, List, Optional
+from typing import Any, Iterable, List
 
 # 3rd party
 import clr  # type: ignore
@@ -35,11 +34,12 @@ import isort  # type: ignore
 from autoflake import fix_code  # type: ignore
 from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.stringlist import StringList
-from isort import Config
 
 # this package
 from dotnet_stub_builder.type_conversion import Converter
-from dotnet_stub_builder.utils import dedup, is_dunder, tab_in
+from dotnet_stub_builder.utils import (
+		SYSTEM_MODULES, dedup, get_child_attrs, get_signature, is_dunder, isort_config, make_property
+		)
 
 clr.AddReference("System")
 
@@ -47,37 +47,6 @@ clr.AddReference("System")
 import System  # type: ignore
 
 __all__ = ["make_imports", "make_module", "make_package", "walk_attrs"]
-
-isort_config = Config(force_single_line=True)
-method_alphabet = f"_{string.ascii_uppercase}{string.ascii_lowercase}0123456789"
-
-SYSTEM_MODULES = [
-		"System",
-		"System.Collections",
-		"System.ComponentModel",
-		"System.Configuration",
-		"System.Configuration.Assemblies",
-		"System.Data",
-		"System.Globalization",
-		"System.IO",
-		"System.Reflection",
-		"System.Runtime",
-		"System.Runtime.CompilerServices",
-		"System.Runtime.InteropServices",
-		"System.Runtime.Remoting",
-		"System.Runtime.Serialization",
-		"System.Security",
-		"System.Security.AccessControl",
-		"System.Security.Cryptography",
-		"System.Security.Cryptography.X509Certificates",
-		"System.Security.Policy",
-		"System.Security.Principal",
-		"System.Threading",
-		"System.Threading.Tasks",
-		"System.Xml",
-		"System.Xml.Schema",
-		"System.Xml.Serialization",
-		]
 
 
 def make_imports(current_module_name: str) -> List[str]:
@@ -196,6 +165,16 @@ def make_package(
 
 
 def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
+	"""
+	Create stubs for given class, including all attributes.
+
+	:param module:
+	:param attr_name:
+	:param converter:
+
+	:return:
+	"""
+
 	buf = StringList(convert_indents=True)
 	buf.indent_type = "    "
 
@@ -219,66 +198,30 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 			else:
 				buf.append(f"class {attr_name}:\n")
 
-			child_attrs = dir(obj)
-			if "__init__" not in child_attrs:
-				child_attrs.append("__init__")
+			for child_attr_name in get_child_attrs(obj):
+				try:
+					child_obj = getattr(obj, child_attr_name)
+				except TypeError as e:
+					if str(e) in {
+							"instance property must be accessed through a class instance",
+							"property cannot be read",
+							}:
 
-			child_attrs.sort(key=lambda attr: [method_alphabet.index(letter) for letter in attr])
+						make_property(buf, child_attr_name)
+						continue
 
-			for child_attr_name in child_attrs:
-				if (not is_dunder(child_attr_name) or child_attr_name == "__init__") and child_attr_name not in {
-						"None",
-						"value__",
-						"AttrsImpl",
-						"ClassImpl",
-						"DefaultValueImpl",
-						"MemberImpl",
-						"NameImpl",
-						"PositionImpl",
-						}:
+					elif str(e) == "instance attribute must be accessed through a class instance":
+						print(f"{e.__class__.__name__}: '{e}' occurred for {attr_name}.{child_attr_name}")
+						continue
 
-					try:
-						child_obj = getattr(obj, child_attr_name)
-					except TypeError as e:
-						if str(e) in {
-								"instance property must be accessed through a class instance",
-								"property cannot be read",
-								}:
+					else:
+						raise e
 
-							with buf.with_indent_size(buf.indent_size + 1):
-								buf.blankline(ensure_single=True)
-								buf.append(f"@property\ndef {child_attr_name}(self): ...")
-								buf.blankline(ensure_single=True)
+				# TODO: if isinstance(child_obj, FunctionType):
 
-							with buf.with_indent_size(buf.indent_size + 1):
-								buf.blankline(ensure_single=True)
-								buf.append(f"@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ...")
-								buf.blankline(ensure_single=True)
+				return_type, arguments = get_signature(child_obj, child_attr_name, converter)
 
-							continue
-
-						elif str(e) == "instance attribute must be accessed through a class instance":
-							print(f"{e.__class__.__name__}: '{e}' occurred for {attr_name}.{child_attr_name}")
-							continue
-
-						else:
-							raise e
-
-					# TODO: if isinstance(child_obj, FunctionType):
-
-					doc: Optional[str] = child_obj.__doc__
-					if doc in {int.__doc__, str.__doc__}:
-						doc = None
-					return_type = "Any"
-					arguments: Optional[str] = None
-
-					if doc:
-						for line in doc.splitlines():
-							m = re.match(fr"^(.*) {child_attr_name}\((.*)\)", line.strip())
-							if m:
-								csharp_return_type = m.group(1)
-								return_type = converter.convert_type(csharp_return_type)
-								arguments = m.group(2)
+				with buf.with_indent_size(buf.indent_size + 1):
 
 					if arguments is not None and arguments:
 						signature = []
@@ -286,24 +229,28 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 						for idx, argument in enumerate(arguments.split(", ")):
 							signature.append(f"{'_' * (idx + 1)}: {converter.convert_type(argument)}")
 
-						line = tab_in(f"def {child_attr_name}(self, {', '.join(signature)}) -> {return_type}: ...")
-						if len(line) > 92:
+						line = f"def {child_attr_name}(self, {', '.join(signature)}) -> {return_type}: ..."
+
+						if len(line) > 88:
 							buf.blankline(ensure_single=True)
-							sig = ',\n        '.join(("self", *signature, ''))
-							line = tab_in(f"def {child_attr_name}({sig}) -> {return_type}: ...\n")
-							buf.append(line)
+							buf.append(f"def {child_attr_name}(")
+
+							with buf.with_indent_size(buf.indent_size + 2):
+								buf.append("self,")
+								for line in signature:
+									buf.append(f"{line},")
+								buf.append(f") -> {return_type}: ...\n")
 						else:
 							buf.append(line)
 
 					elif arguments is None:
-						buf.append(tab_in(f"def {child_attr_name}(self, *args, **kwargs) -> {return_type}: ..."))
+						buf.append(f"def {child_attr_name}(self, *args, **kwargs) -> {return_type}: ...")
 
 					elif not arguments:
 						# i.e. takes no arguments
-						buf.append(tab_in(f"def {child_attr_name}(self) -> {return_type}: ..."))
+						buf.append(f"def {child_attr_name}(self) -> {return_type}: ...")
 
 		buf.blankline(ensure_single=True)
-
 		return str(buf)
 
 	return ''
