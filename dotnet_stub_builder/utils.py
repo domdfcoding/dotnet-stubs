@@ -34,7 +34,7 @@ from typing import Iterable, Iterator, List, Optional, Tuple, Type
 # 3rd party
 from domdf_python_tools.stringlist import StringList
 from domdf_python_tools.words import alpha_sort, ascii_digits
-from isort import Config
+from isort import Config  # type: ignore
 from orderedset import OrderedSet  # type: ignore
 
 # this package
