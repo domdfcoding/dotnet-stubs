@@ -111,8 +111,6 @@ class Converter:
 				"System.Data.Common.DbDataReader": "Any",
 				"T": "Any",
 				"System.Collections.Generic.IComparer": "Any",
-				"IonPolarity": "Any",
-				"SmoothingFunctionType": "Any",
 				"SortDirection": "Any",
 				"System.Runtime.Remoting.Messaging.IMessageSink": "Any",
 				**extra_mappings,
