@@ -1,21 +1,15 @@
 from __future__ import annotations
 
-from enum import Enum
-from typing import Any, Dict, List, Type
 
 import System
 import System.Collections
+import System.ComponentModel
 import System.Configuration
 import System.Configuration.Assemblies
 import System.Data
 import System.Globalization
 import System.IO
 import System.Reflection
-import System.Runtime
-import System.Runtime.CompilerServices
-import System.Runtime.InteropServices
-import System.Runtime.Remoting
-import System.Runtime.Serialization
 import System.Security
 import System.Security.AccessControl
 import System.Security.Cryptography
@@ -27,3 +21,8 @@ import System.Xml
 import System.Xml.Schema
 import System.Xml.Serialization
 from System.ComponentModel import MarshalByValueComponent
+
+from . import CompilerServices
+from . import InteropServices
+from . import Remoting
+from . import Serialization

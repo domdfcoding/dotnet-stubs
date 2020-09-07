@@ -1,12 +1,9 @@
 from __future__ import annotations
 
-from enum import Enum
-from typing import Any, Dict, List, Type
 
 import System
 import System.Collections
-import System.Configuration
-import System.Configuration.Assemblies
+import System.ComponentModel
 import System.Data
 import System.Globalization
 import System.IO
@@ -27,3 +24,5 @@ import System.Xml
 import System.Xml.Schema
 import System.Xml.Serialization
 from System.ComponentModel import MarshalByValueComponent
+
+from . import Assemblies
