@@ -31,8 +31,8 @@ from typing import Any, Iterable, List, Optional
 
 # 3rd party
 import clr  # type: ignore
-import isort
-from autoflake import fix_code
+import isort  # type: ignore
+from autoflake import fix_code  # type: ignore
 from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.stringlist import StringList
 from isort import Config
