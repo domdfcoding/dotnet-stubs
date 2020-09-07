@@ -32,7 +32,9 @@ from typing import Any, Iterable, List, Optional
 # 3rd party
 import clr  # type: ignore
 import isort
+from autoflake import fix_code
 from domdf_python_tools.paths import PathPlus
+from domdf_python_tools.stringlist import StringList
 from isort import Config
 
 # this package
@@ -52,6 +54,7 @@ method_alphabet = f"_{string.ascii_uppercase}{string.ascii_lowercase}0123456789"
 SYSTEM_MODULES = [
 		"System",
 		"System.Collections",
+		"System.ComponentModel",
 		"System.Configuration",
 		"System.Configuration.Assemblies",
 		"System.Data",
@@ -116,7 +119,7 @@ def make_module(
 	:param first_party_imports: A list of first-party imports to include at the top of the file.
 	"""
 
-	buf = []
+	buf = StringList()
 	path = name.split(".")
 
 	stubs_dir = PathPlus(f"{path[0]}-stubs")
@@ -124,31 +127,47 @@ def make_module(
 	(stubs_dir / "/".join(x for x in path[1:-1])).maybe_make(parents=True)
 	stub_file = stubs_dir / "/".join(x for x in path[1:-1]) / f"{path[-1]}.pyi"
 
+	import_name = name.replace(".__init__", '')
+
 	for imp in (*make_imports(name), *first_party_imports):
-		imp = re.sub(fr"import {name}\.([A-Za-z_]+)\.([A-Za-z_]+)\.([A-Za-z_]+)", r"from .\1.\2 import \3", imp)
-		imp = re.sub(fr"import {name}\.([A-Za-z_]+)\.([A-Za-z_]+)", r"from .\1 import \2", imp)
-		imp = re.sub(fr"import {name}\.([A-Za-z_]+)", r"from . import \1", imp)
+		imp = re.sub(
+				fr"import {import_name}\.([A-Za-z_]+)\.([A-Za-z_]+)\.([A-Za-z_]+)", r"from .\1.\2 import \3", imp
+				)
+		imp = re.sub(fr"import {import_name}\.([A-Za-z_]+)\.([A-Za-z_]+)", r"from .\1 import \2", imp)
+		imp = re.sub(fr"import {import_name}\.([A-Za-z_]+)", r"from . import \1", imp)
+		imp = re.sub(fr"import {import_name}$", "", imp)
 		buf.append(imp)
 
-	if name != "System.ComponentModel":
-		if name == "System":
+	if import_name != "System.ComponentModel":
+		if import_name == "System":
 			buf.append("from .ComponentModel import MarshalByValueComponent")
 		else:
 			buf.append("from System.ComponentModel import MarshalByValueComponent")
 
-	buf.append('')
-	buf.append('')
-
 	for attr_name in dedup(attr_list):
 		stub_code = walk_attrs(module, attr_name, converter=converter)
-		stub_code = stub_code.replace(f": {name}.", ': ')
-		stub_code = stub_code.replace(f" -> {name}.", ' -> ')
-		stub_code = stub_code.replace(f"[{name}.", '[')
+		stub_code = stub_code.replace(f": {import_name}.", ': ')
+		stub_code = stub_code.replace(f" -> {import_name}.", ' -> ')
+		stub_code = stub_code.replace(f"[{import_name}.", '[')
 		stub_code.replace("System.Collections.Generic.IDictionary[System.String,System.String]", "Any")
+
+		buf.blankline(ensure_single=True)
+		buf.blankline()
 
 		buf.append(stub_code)
 
-	stub_file.write_clean(isort.code("\n".join(buf), config=isort_config))
+	sorted_code = isort.code(str(buf), config=isort_config)
+	sans_unneeded_imports = fix_code(
+			sorted_code,
+			additional_imports=None,
+			expand_star_imports=False,
+			remove_all_unused_imports=False,
+			remove_duplicate_keys=False,
+			remove_unused_variables=False,
+			ignore_init_module_imports=False,
+			)
+
+	stub_file.write_text(sans_unneeded_imports)
 
 	return True
 
@@ -176,7 +195,8 @@ def make_package(
 
 
 def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
-	buf = []
+	buf = StringList(convert_indents=True)
+	buf.indent_type = "    "
 
 	if not is_dunder(attr_name):
 		obj = getattr(module, attr_name)
@@ -194,11 +214,9 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 			bases = list(filter(lambda x: x is Any, bases))
 
 			if bases:
-				buf.append(f"class {attr_name}({', '.join(bases)}):")
-				buf.append('')
+				buf.append(f"class {attr_name}({', '.join(bases)}):\n")
 			else:
-				buf.append(f"class {attr_name}:")
-				buf.append('')
+				buf.append(f"class {attr_name}:\n")
 
 			child_attrs = dir(obj)
 			if "__init__" not in child_attrs:
@@ -226,17 +244,14 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 								"property cannot be read",
 								}:
 
-							if buf[-1]:
-								buf.append('')
+							with buf.with_indent_size(buf.indent_size + 1):
+								buf.blankline(ensure_single=True)
+								buf.append(f"@property\ndef {child_attr_name}(self): ...")
 
-							buf.extend([
-									tab_in("@property"),
-									tab_in(f"def {child_attr_name}(self): ..."),
-									'',
-									tab_in(f"@{child_attr_name}.setter"),
-									tab_in(f"def {child_attr_name}(self, value): ..."),
-									'',
-									])
+							with buf.with_indent_size(buf.indent_size + 1):
+								buf.blankline(ensure_single=True)
+								buf.append(f"@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ...")
+
 							continue
 
 						elif str(e) == "instance attribute must be accessed through a class instance":
@@ -270,14 +285,10 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 
 						line = tab_in(f"def {child_attr_name}(self, {', '.join(signature)}) -> {return_type}: ...")
 						if len(line) > 92:
+							buf.blankline(ensure_single=True)
 							sig = ',\n        '.join(("self", *signature, ''))
-
-							if buf[-1]:
-								buf.append('')
-
-							line = tab_in(f"def {child_attr_name}({sig}) -> {return_type}: ...")
+							line = tab_in(f"def {child_attr_name}({sig}) -> {return_type}: ...\n")
 							buf.append(line)
-							buf.append('')
 						else:
 							buf.append(line)
 
@@ -288,8 +299,8 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 						# i.e. takes no arguments
 						buf.append(tab_in(f"def {child_attr_name}(self) -> {return_type}: ..."))
 
-		buf.append("")
+		buf.blankline(ensure_single=True)
 
-		return "\n".join(buf)
+		return str(buf)
 
 	return ''

@@ -215,6 +215,7 @@ def build_stubs():
 					"XmlNamedNodeMap",
 					"XmlImplementation",
 					"XmlNodeChangedEventArgs",
+					"XmlNodeChangedAction",
 					]
 			)
 
@@ -279,6 +280,7 @@ def build_stubs():
 					"StreamingContext",
 					"SerializationInfoEnumerator",
 					"SafeSerializationEventArgs",
+					"ISafeSerializationData",
 					]
 			)
 
@@ -289,14 +291,24 @@ def build_stubs():
 			)
 
 	# System.Runtime.Remoting
-	make_module("System.Runtime.Remoting", System.Runtime.Remoting, [
-			"ObjRef",
-			])
+	make_module(
+			"System.Runtime.Remoting",
+			System.Runtime.Remoting, [
+					"ObjRef",
+					"IChannelInfo",
+					"IEnvoyInfo",
+					"IRemotingTypeInfo",
+					]
+			)
 
 	# System.Runtime.InteropServices
-	make_module("System.Runtime.InteropServices", System.Runtime.InteropServices, [
-			"StructLayoutAttribute",
-			])
+	make_module(
+			"System.Runtime.InteropServices",
+			System.Runtime.InteropServices, [
+					"StructLayoutAttribute",
+					"LayoutKind",
+					]
+			)
 
 	# System.Collections
 	make_module(
@@ -454,7 +466,11 @@ def build_stubs():
 	make_package("System.Security.Cryptography", System.Security.Cryptography, ["HashAlgorithmName"])
 
 	# System.Security.AccessControl
-	make_package("System.Security.AccessControl", System.Security.AccessControl, ["FileSecurity"])
+	make_package(
+			"System.Security.AccessControl",
+			System.Security.AccessControl,
+			["FileSecurity", "InheritanceFlags", "PropagationFlags", "AccessControlType", "AccessRule"],
+			)
 
 	# System.Security.Cryptography.X509Certificates
 	make_package(

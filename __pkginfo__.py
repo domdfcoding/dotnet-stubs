@@ -51,7 +51,7 @@ github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/dotnet-stubs"
 repo_root = pathlib.Path(__file__).parent
 install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
-extras_require = {'builder': ['pythonnet', 'domdf_python_tools>=0.5.1', 'orderedset', 'isort>=5.0.0'], 'all': ['domdf_python_tools>=0.5.1', 'isort>=5.0.0', 'orderedset', 'pythonnet']}
+extras_require = {'builder': ['pythonnet', 'domdf_python_tools>=0.7.0', 'orderedset', 'isort>=5.0.0'], 'all': ['domdf_python_tools>=0.7.0', 'isort>=5.0.0', 'orderedset', 'pythonnet']}
 
 
 

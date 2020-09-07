@@ -114,6 +114,7 @@ class Converter:
 				"IonPolarity": "Any",
 				"SmoothingFunctionType": "Any",
 				"SortDirection": "Any",
+				"System.Runtime.Remoting.Messaging.IMessageSink": "Any",
 				**extra_mappings,
 				}
 
