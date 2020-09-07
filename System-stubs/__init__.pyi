@@ -83,7 +83,8 @@ class Predicate:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -100,7 +101,8 @@ class Predicate:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -186,7 +188,8 @@ class TimeSpan:
     def Overloads(self, *args, **kwargs) -> Any: ...
     def Parse(self, _: str, __: Any) -> TimeSpan: ...
 
-    def ParseExact(self,
+    def ParseExact(
+            self,
             _: str,
             __: str,
             ___: Any,
@@ -248,7 +251,8 @@ class TimeSpan:
 
     def TryParse(self, _: str, __: Any, ___: TimeSpan) -> bool: ...
 
-    def TryParseExact(self,
+    def TryParseExact(
+            self,
             _: str,
             __: str,
             ___: Any,
@@ -276,7 +280,8 @@ class TimeSpan:
     def op_LessThan(self, _: TimeSpan, __: TimeSpan) -> bool: ...
     def op_LessThanOrEqual(self, _: TimeSpan, __: TimeSpan) -> bool: ...
 
-    def op_Subtraction(self,
+    def op_Subtraction(
+            self,
             _: TimeSpan,
             __: TimeSpan,
             ) -> TimeSpan: ...
@@ -293,11 +298,13 @@ class ModuleHandle:
     def Finalize(self) -> None: ...
     def GetHashCode(self) -> int: ...
 
-    def GetRuntimeFieldHandleFromMetadataToken(self,
+    def GetRuntimeFieldHandleFromMetadataToken(
+            self,
             _: int,
             ) -> RuntimeFieldHandle: ...
 
-    def GetRuntimeMethodHandleFromMetadataToken(self,
+    def GetRuntimeMethodHandleFromMetadataToken(
+            self,
             _: int,
             ) -> RuntimeMethodHandle: ...
 
@@ -314,19 +321,22 @@ class ModuleHandle:
     def Overloads(self, *args, **kwargs) -> Any: ...
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
 
-    def ResolveFieldHandle(self,
+    def ResolveFieldHandle(
+            self,
             _: int,
             __: List[RuntimeTypeHandle],
             ___: List[RuntimeTypeHandle],
             ) -> RuntimeFieldHandle: ...
 
-    def ResolveMethodHandle(self,
+    def ResolveMethodHandle(
+            self,
             _: int,
             __: List[RuntimeTypeHandle],
             ___: List[RuntimeTypeHandle],
             ) -> RuntimeMethodHandle: ...
 
-    def ResolveTypeHandle(self,
+    def ResolveTypeHandle(
+            self,
             _: int,
             __: List[RuntimeTypeHandle],
             ___: List[RuntimeTypeHandle],
@@ -345,7 +355,8 @@ class Delegate:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -361,7 +372,8 @@ class Delegate:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -435,7 +447,8 @@ class MulticastDelegate:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -451,7 +464,8 @@ class MulticastDelegate:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -488,7 +502,8 @@ class EventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: EventArgs,
             ___: Any,
@@ -499,7 +514,8 @@ class EventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -516,7 +532,8 @@ class EventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -564,7 +581,8 @@ class AsyncCallback:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -581,7 +599,8 @@ class AsyncCallback:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -721,13 +740,15 @@ class DateTime:
     def Now(self, *args, **kwargs) -> Any: ...
     def Overloads(self, *args, **kwargs) -> Any: ...
 
-    def Parse(self,
+    def Parse(
+            self,
             _: str,
             __: Any,
             ___: Globalization.DateTimeStyles,
             ) -> DateTime: ...
 
-    def ParseExact(self,
+    def ParseExact(
+            self,
             _: str,
             __: str,
             ___: Any,
@@ -742,7 +763,8 @@ class DateTime:
     @Second.setter
     def Second(self, value): ...
 
-    def SpecifyKind(self,
+    def SpecifyKind(
+            self,
             _: DateTime,
             __: DateTimeKind,
             ) -> DateTime: ...
@@ -774,14 +796,16 @@ class DateTime:
     def ToUniversalTime(self) -> DateTime: ...
     def Today(self, *args, **kwargs) -> Any: ...
 
-    def TryParse(self,
+    def TryParse(
+            self,
             _: str,
             __: Any,
             ___: Globalization.DateTimeStyles,
             ____: DateTime,
             ) -> bool: ...
 
-    def TryParseExact(self,
+    def TryParseExact(
+            self,
             _: str,
             __: str,
             ___: Any,
@@ -821,7 +845,8 @@ class DateTime:
     def op_LessThan(self, _: DateTime, __: DateTime) -> bool: ...
     def op_LessThanOrEqual(self, _: DateTime, __: DateTime) -> bool: ...
 
-    def op_Subtraction(self,
+    def op_Subtraction(
+            self,
             _: DateTime,
             __: DateTime,
             ) -> TimeSpan: ...
@@ -858,7 +883,8 @@ class Converter:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -875,7 +901,8 @@ class Converter:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -917,7 +944,8 @@ class RuntimeMethodHandle:
     def GetFunctionPointer(self) -> Any: ...
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -936,12 +964,14 @@ class RuntimeMethodHandle:
 
     def get_Value(self) -> Any: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: RuntimeMethodHandle,
             __: RuntimeMethodHandle,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: RuntimeMethodHandle,
             __: RuntimeMethodHandle,
             ) -> bool: ...
@@ -955,7 +985,8 @@ class RuntimeTypeHandle:
     def GetHashCode(self) -> int: ...
     def GetModuleHandle(self) -> ModuleHandle: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1012,7 +1043,8 @@ class RuntimeFieldHandle:
     def Finalize(self) -> None: ...
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1031,12 +1063,14 @@ class RuntimeFieldHandle:
 
     def get_Value(self) -> Any: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: RuntimeFieldHandle,
             __: RuntimeFieldHandle,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: RuntimeFieldHandle,
             __: RuntimeFieldHandle,
             ) -> bool: ...
@@ -1149,7 +1183,8 @@ class Action:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1166,7 +1201,8 @@ class Action:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1221,7 +1257,8 @@ class Func:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1238,7 +1275,8 @@ class Func:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: Runtime.Serialization.SerializationInfo,
             __: Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1278,13 +1316,15 @@ class Attribute:
     def Equals(self, _: object) -> bool: ...
     def Finalize(self) -> None: ...
 
-    def GetCustomAttribute(self,
+    def GetCustomAttribute(
+            self,
             _: Reflection.ParameterInfo,
             __: Type,
             ___: bool,
             ) -> Attribute: ...
 
-    def GetCustomAttributes(self,
+    def GetCustomAttributes(
+            self,
             _: Reflection.ParameterInfo,
             __: Type,
             ___: bool,
@@ -1294,7 +1334,8 @@ class Attribute:
     def GetType(self) -> Type: ...
     def IsDefaultAttribute(self) -> bool: ...
 
-    def IsDefined(self,
+    def IsDefined(
+            self,
             _: Reflection.ParameterInfo,
             __: Type,
             ___: bool,
@@ -1446,13 +1487,15 @@ class DateTimeOffset:
 
     def Overloads(self, *args, **kwargs) -> Any: ...
 
-    def Parse(self,
+    def Parse(
+            self,
             _: str,
             __: Any,
             ___: Globalization.DateTimeStyles,
             ) -> DateTimeOffset: ...
 
-    def ParseExact(self,
+    def ParseExact(
+            self,
             _: str,
             __: str,
             ___: Any,
@@ -1489,14 +1532,16 @@ class DateTimeOffset:
     def ToUnixTimeMilliseconds(self) -> int: ...
     def ToUnixTimeSeconds(self) -> int: ...
 
-    def TryParse(self,
+    def TryParse(
+            self,
             _: str,
             __: Any,
             ___: Globalization.DateTimeStyles,
             ____: DateTimeOffset,
             ) -> bool: ...
 
-    def TryParseExact(self,
+    def TryParseExact(
+            self,
             _: str,
             __: str,
             ___: Any,
@@ -1544,38 +1589,44 @@ class DateTimeOffset:
     def get_UtcTicks(self) -> int: ...
     def get_Year(self) -> int: ...
 
-    def op_Addition(self,
+    def op_Addition(
+            self,
             _: DateTimeOffset,
             __: TimeSpan,
             ) -> DateTimeOffset: ...
 
     def op_Equality(self, _: DateTimeOffset, __: DateTimeOffset) -> bool: ...
 
-    def op_GreaterThan(self,
+    def op_GreaterThan(
+            self,
             _: DateTimeOffset,
             __: DateTimeOffset,
             ) -> bool: ...
 
-    def op_GreaterThanOrEqual(self,
+    def op_GreaterThanOrEqual(
+            self,
             _: DateTimeOffset,
             __: DateTimeOffset,
             ) -> bool: ...
 
     def op_Implicit(self, _: DateTime) -> DateTimeOffset: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: DateTimeOffset,
             __: DateTimeOffset,
             ) -> bool: ...
 
     def op_LessThan(self, _: DateTimeOffset, __: DateTimeOffset) -> bool: ...
 
-    def op_LessThanOrEqual(self,
+    def op_LessThanOrEqual(
+            self,
             _: DateTimeOffset,
             __: DateTimeOffset,
             ) -> bool: ...
 
-    def op_Subtraction(self,
+    def op_Subtraction(
+            self,
             _: DateTimeOffset,
             __: TimeSpan,
             ) -> DateTimeOffset: ...

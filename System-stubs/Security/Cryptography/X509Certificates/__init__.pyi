@@ -36,18 +36,21 @@ class X509Certificate:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def CreateFromCertFile(self,
+    def CreateFromCertFile(
+            self,
             _: str,
             ) -> X509Certificate: ...
 
-    def CreateFromSignedFile(self,
+    def CreateFromSignedFile(
+            self,
             _: str,
             ) -> X509Certificate: ...
 
     def Dispose(self, _: bool) -> None: ...
     def Equals(self, _: object) -> bool: ...
 
-    def Export(self,
+    def Export(
+            self,
             _: X509ContentType,
             __: str,
             ) -> List[bytes]: ...
@@ -55,11 +58,13 @@ class X509Certificate:
     def Finalize(self) -> None: ...
     def FormatDate(self, _: System.DateTime) -> str: ...
 
-    def GetCertHash(self,
+    def GetCertHash(
+            self,
             _: System.Security.Cryptography.HashAlgorithmName,
             ) -> List[bytes]: ...
 
-    def GetCertHashString(self,
+    def GetCertHashString(
+            self,
             _: System.Security.Cryptography.HashAlgorithmName,
             ) -> str: ...
 
@@ -86,7 +91,8 @@ class X509Certificate:
     @Handle.setter
     def Handle(self, value): ...
 
-    def Import(self,
+    def Import(
+            self,
             _: str,
             __: str,
             ___: X509KeyStorageFlags,

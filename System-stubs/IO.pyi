@@ -36,7 +36,8 @@ class Stream:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginRead(self,
+    def BeginRead(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -44,7 +45,8 @@ class Stream:
             _____: object,
             ) -> Any: ...
 
-    def BeginWrite(self,
+    def BeginWrite(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -79,7 +81,8 @@ class Stream:
     def Close(self) -> None: ...
     def CopyTo(self, _: Stream, __: int) -> None: ...
 
-    def CopyToAsync(self,
+    def CopyToAsync(
+            self,
             _: Stream,
             __: int,
             ___: System.Threading.CancellationToken,
@@ -94,7 +97,8 @@ class Stream:
     def Finalize(self) -> None: ...
     def Flush(self) -> None: ...
 
-    def FlushAsync(self,
+    def FlushAsync(
+            self,
             _: System.Threading.CancellationToken,
             ) -> System.Threading.Tasks.Task: ...
 
@@ -122,7 +126,8 @@ class Stream:
 
     def Read(self, _: List[bytes], __: int, ___: int) -> int: ...
 
-    def ReadAsync(self,
+    def ReadAsync(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -144,7 +149,8 @@ class Stream:
     def ToString(self) -> str: ...
     def Write(self, _: List[bytes], __: int, ___: int) -> None: ...
 
-    def WriteAsync(self,
+    def WriteAsync(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -192,7 +198,8 @@ class TextReader:
     def ReadAsync(self, _: List[str], __: int, ___: int) -> System.Threading.Tasks.Task: ...
     def ReadBlock(self, _: List[str], __: int, ___: int) -> int: ...
 
-    def ReadBlockAsync(self,
+    def ReadBlockAsync(
+            self,
             _: List[str],
             __: int,
             ___: int,
@@ -239,7 +246,8 @@ class FileStream:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginRead(self,
+    def BeginRead(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -247,7 +255,8 @@ class FileStream:
             _____: object,
             ) -> Any: ...
 
-    def BeginWrite(self,
+    def BeginWrite(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -282,7 +291,8 @@ class FileStream:
     def Close(self) -> None: ...
     def CopyTo(self, _: Stream, __: int) -> None: ...
 
-    def CopyToAsync(self,
+    def CopyToAsync(
+            self,
             _: Stream,
             __: int,
             ___: System.Threading.CancellationToken,
@@ -343,7 +353,8 @@ class FileStream:
 
     def Read(self, _: List[bytes], __: int, ___: int) -> int: ...
 
-    def ReadAsync(self,
+    def ReadAsync(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -373,7 +384,8 @@ class FileStream:
     def Unlock(self, _: int, __: int) -> None: ...
     def Write(self, _: List[bytes], __: int, ___: int) -> None: ...
 
-    def WriteAsync(self,
+    def WriteAsync(
+            self,
             _: List[bytes],
             __: int,
             ___: int,

@@ -52,12 +52,14 @@ class IdentityReference:
 
     def get_Value(self) -> str: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: IdentityReference,
             __: IdentityReference,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: IdentityReference,
             __: IdentityReference,
             ) -> bool: ...

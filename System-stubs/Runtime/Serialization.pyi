@@ -261,7 +261,8 @@ class SafeSerializationEventArgs:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def AddSerializedState(self,
+    def AddSerializedState(
+            self,
             _: ISafeSerializationData,
             ) -> None: ...
 

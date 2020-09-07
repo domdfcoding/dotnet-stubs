@@ -38,13 +38,15 @@ class StructLayoutAttribute:
     def Equals(self, _: object) -> bool: ...
     def Finalize(self) -> None: ...
 
-    def GetCustomAttribute(self,
+    def GetCustomAttribute(
+            self,
             _: System.Reflection.ParameterInfo,
             __: Type,
             ___: bool,
             ) -> System.Attribute: ...
 
-    def GetCustomAttributes(self,
+    def GetCustomAttributes(
+            self,
             _: System.Reflection.ParameterInfo,
             __: Type,
             ___: bool,
@@ -54,7 +56,8 @@ class StructLayoutAttribute:
     def GetType(self) -> Type: ...
     def IsDefaultAttribute(self) -> bool: ...
 
-    def IsDefined(self,
+    def IsDefined(
+            self,
             _: System.Reflection.ParameterInfo,
             __: Type,
             ___: bool,

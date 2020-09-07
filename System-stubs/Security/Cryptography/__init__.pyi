@@ -61,12 +61,14 @@ class HashAlgorithmName:
     def get_SHA384(self) -> HashAlgorithmName: ...
     def get_SHA512(self) -> HashAlgorithmName: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: HashAlgorithmName,
             __: HashAlgorithmName,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: HashAlgorithmName,
             __: HashAlgorithmName,
             ) -> bool: ...

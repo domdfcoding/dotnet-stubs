@@ -88,11 +88,13 @@ class CultureInfo:
     def GetConsoleFallbackUICulture(self) -> CultureInfo: ...
     def GetCultureInfo(self, _: str, __: str) -> CultureInfo: ...
 
-    def GetCultureInfoByIetfLanguageTag(self,
+    def GetCultureInfoByIetfLanguageTag(
+            self,
             _: str,
             ) -> CultureInfo: ...
 
-    def GetCultures(self,
+    def GetCultures(
+            self,
             _: CultureTypes,
             ) -> List[CultureInfo]: ...
 
@@ -167,7 +169,8 @@ class CultureInfo:
     @Parent.setter
     def Parent(self, value): ...
 
-    def ReadOnly(self,
+    def ReadOnly(
+            self,
             _: CultureInfo,
             ) -> CultureInfo: ...
 
@@ -236,11 +239,13 @@ class CultureInfo:
     def set_CurrentUICulture(self, _: CultureInfo) -> None: ...
     def set_DateTimeFormat(self, _: DateTimeFormatInfo) -> None: ...
 
-    def set_DefaultThreadCurrentCulture(self,
+    def set_DefaultThreadCurrentCulture(
+            self,
             _: CultureInfo,
             ) -> None: ...
 
-    def set_DefaultThreadCurrentUICulture(self,
+    def set_DefaultThreadCurrentUICulture(
+            self,
             _: CultureInfo,
             ) -> None: ...
 
@@ -390,7 +395,8 @@ class DateTimeFormatInfo:
     @RFC1123Pattern.setter
     def RFC1123Pattern(self, value): ...
 
-    def ReadOnly(self,
+    def ReadOnly(
+            self,
             _: DateTimeFormatInfo,
             ) -> DateTimeFormatInfo: ...
 
@@ -679,7 +685,8 @@ class NumberFormatInfo:
     @PositiveSign.setter
     def PositiveSign(self, value): ...
 
-    def ReadOnly(self,
+    def ReadOnly(
+            self,
             _: NumberFormatInfo,
             ) -> NumberFormatInfo: ...
 

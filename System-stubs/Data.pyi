@@ -204,14 +204,16 @@ class DataTable:
     def Finalize(self) -> None: ...
     def GetChanges(self, _: DataRowState) -> DataTable: ...
 
-    def GetDataTableSchema(self,
+    def GetDataTableSchema(
+            self,
             _: System.Xml.Schema.XmlSchemaSet,
             ) -> System.Xml.Schema.XmlSchemaComplexType: ...
 
     def GetErrors(self) -> List[List]: ...
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -236,7 +238,8 @@ class DataTable:
     @IsInitialized.setter
     def IsInitialized(self, value): ...
 
-    def Load(self,
+    def Load(
+            self,
             _: IDataReader,
             __: LoadOption,
             ___: FillErrorEventHandler,
@@ -252,7 +255,8 @@ class DataTable:
 
     def MemberwiseClone(self) -> object: ...
 
-    def Merge(self,
+    def Merge(
+            self,
             _: DataTable,
             __: bool,
             ___: MissingSchemaAction,
@@ -276,7 +280,8 @@ class DataTable:
     def OnColumnChanged(self, _: Any) -> None: ...
     def OnColumnChanging(self, _: Any) -> None: ...
 
-    def OnPropertyChanging(self,
+    def OnPropertyChanging(
+            self,
             _: System.ComponentModel.PropertyChangedEventArgs,
             ) -> None: ...
 
@@ -389,7 +394,8 @@ class DataTable:
     def get_TableName(self) -> str: ...
     def remove_ColumnChanged(self, _: DataColumnChangeEventHandler) -> None: ...
 
-    def remove_ColumnChanging(self,
+    def remove_ColumnChanging(
+            self,
             _: DataColumnChangeEventHandler,
             ) -> None: ...
 
@@ -487,7 +493,8 @@ class DataTableReader:
 
     def IsDBNull(self, _: int) -> bool: ...
 
-    def IsDBNullAsync(self,
+    def IsDBNullAsync(
+            self,
             _: int,
             __: System.Threading.CancellationToken,
             ) -> System.Threading.Tasks.Task[bool]: ...
@@ -495,14 +502,16 @@ class DataTableReader:
     def MemberwiseClone(self) -> object: ...
     def NextResult(self) -> bool: ...
 
-    def NextResultAsync(self,
+    def NextResultAsync(
+            self,
             _: System.Threading.CancellationToken,
             ) -> System.Threading.Tasks.Task[bool]: ...
 
     def Overloads(self, *args, **kwargs) -> Any: ...
     def Read(self) -> bool: ...
 
-    def ReadAsync(self,
+    def ReadAsync(
+            self,
             _: System.Threading.CancellationToken,
             ) -> System.Threading.Tasks.Task[bool]: ...
 
@@ -658,7 +667,8 @@ class DataSet:
 
     def Copy(self) -> DataSet: ...
 
-    def CreateDataReader(self,
+    def CreateDataReader(
+            self,
             _: List[DataTable],
             ) -> DataTableReader: ...
 
@@ -680,7 +690,8 @@ class DataSet:
     @DesignMode.setter
     def DesignMode(self, value): ...
 
-    def DetermineSchemaSerializationMode(self,
+    def DetermineSchemaSerializationMode(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> SchemaSerializationMode: ...
@@ -712,20 +723,23 @@ class DataSet:
     def Finalize(self) -> None: ...
     def GetChanges(self, _: DataRowState) -> DataSet: ...
 
-    def GetDataSetSchema(self,
+    def GetDataSetSchema(
+            self,
             _: System.Xml.Schema.XmlSchemaSet,
             ) -> System.Xml.Schema.XmlSchemaComplexType: ...
 
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
 
     def GetSchemaSerializable(self) -> System.Xml.Schema.XmlSchema: ...
 
-    def GetSerializationData(self,
+    def GetSerializationData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -746,7 +760,8 @@ class DataSet:
     def InitializeDerivedDataSet(self) -> None: ...
     def Initialized(self, *args, **kwargs) -> Any: ...
 
-    def IsBinarySerialized(self,
+    def IsBinarySerialized(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> bool: ...
@@ -757,7 +772,8 @@ class DataSet:
     @IsInitialized.setter
     def IsInitialized(self, value): ...
 
-    def Load(self,
+    def Load(
+            self,
             _: IDataReader,
             __: LoadOption,
             ___: FillErrorEventHandler,
@@ -772,7 +788,8 @@ class DataSet:
 
     def MemberwiseClone(self) -> object: ...
 
-    def Merge(self,
+    def Merge(
+            self,
             _: DataTable,
             __: bool,
             ___: MissingSchemaAction,
@@ -786,7 +803,8 @@ class DataSet:
     @Namespace.setter
     def Namespace(self, value): ...
 
-    def OnPropertyChanging(self,
+    def OnPropertyChanging(
+            self,
             _: System.ComponentModel.PropertyChangedEventArgs,
             ) -> None: ...
 
@@ -877,7 +895,8 @@ class DataSet:
     def set_Prefix(self, _: str) -> None: ...
     def set_RemotingFormat(self, _: SerializationFormat) -> None: ...
 
-    def set_SchemaSerializationMode(self,
+    def set_SchemaSerializationMode(
+            self,
             _: SchemaSerializationMode,
             ) -> None: ...
 
@@ -1004,7 +1023,8 @@ class DataColumn:
     @Namespace.setter
     def Namespace(self, value): ...
 
-    def OnPropertyChanging(self,
+    def OnPropertyChanging(
+            self,
             _: System.ComponentModel.PropertyChangedEventArgs,
             ) -> None: ...
 
@@ -1194,7 +1214,8 @@ class FillErrorEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: FillErrorEventArgs,
             ___: Any,
@@ -1205,7 +1226,8 @@ class FillErrorEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1222,7 +1244,8 @@ class FillErrorEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1354,7 +1377,8 @@ class DataTableNewRowEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: DataTableNewRowEventArgs,
             ___: Any,
@@ -1365,7 +1389,8 @@ class DataTableNewRowEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1382,7 +1407,8 @@ class DataTableNewRowEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1516,7 +1542,8 @@ class DataColumnChangeEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1533,7 +1560,8 @@ class DataColumnChangeEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1571,7 +1599,8 @@ class DataRowChangeEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: DataRowChangeEventArgs,
             ___: Any,
@@ -1582,7 +1611,8 @@ class DataRowChangeEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1599,7 +1629,8 @@ class DataRowChangeEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1665,7 +1696,8 @@ class DataView:
     def BeginInit(self) -> None: ...
     def Close(self) -> None: ...
 
-    def ColumnCollectionChanged(self,
+    def ColumnCollectionChanged(
+            self,
             _: object,
             __: System.ComponentModel.CollectionChangeEventArgs,
             ) -> None: ...
@@ -1717,7 +1749,8 @@ class DataView:
     def GetService(self, _: Type) -> object: ...
     def GetType(self) -> Type: ...
 
-    def IndexListChanged(self,
+    def IndexListChanged(
+            self,
             _: object,
             __: System.ComponentModel.ListChangedEventArgs,
             ) -> None: ...
@@ -1800,7 +1833,8 @@ class DataView:
     def remove_Disposed(self, _: Any) -> None: ...
     def remove_Initialized(self, _: Any) -> None: ...
 
-    def remove_ListChanged(self,
+    def remove_ListChanged(
+            self,
             _: System.ComponentModel.ListChangedEventHandler,
             ) -> None: ...
 
@@ -1871,7 +1905,8 @@ class DataColumnCollection:
 
     def ToString(self) -> str: ...
 
-    def add_CollectionChanged(self,
+    def add_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -1882,7 +1917,8 @@ class DataColumnCollection:
     def get_List(self) -> List: ...
     def get_SyncRoot(self) -> object: ...
 
-    def remove_CollectionChanged(self,
+    def remove_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -1995,11 +2031,13 @@ class DataRelationCollection:
 
     def MemberwiseClone(self) -> object: ...
 
-    def OnCollectionChanged(self,
+    def OnCollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventArgs,
             ) -> None: ...
 
-    def OnCollectionChanging(self,
+    def OnCollectionChanging(
+            self,
             _: System.ComponentModel.CollectionChangeEventArgs,
             ) -> None: ...
 
@@ -2017,7 +2055,8 @@ class DataRelationCollection:
 
     def ToString(self) -> str: ...
 
-    def add_CollectionChanged(self,
+    def add_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -2028,7 +2067,8 @@ class DataRelationCollection:
     def get_List(self) -> List: ...
     def get_SyncRoot(self) -> object: ...
 
-    def remove_CollectionChanged(self,
+    def remove_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -2062,7 +2102,8 @@ class PropertyCollection:
     def GetHash(self, _: object) -> int: ...
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -2107,7 +2148,8 @@ class PropertyCollection:
     @SyncRoot.setter
     def SyncRoot(self, value): ...
 
-    def Synchronized(self,
+    def Synchronized(
+            self,
             _: System.Collections.Hashtable,
             ) -> System.Collections.Hashtable: ...
 
@@ -2215,7 +2257,8 @@ class DataTableClearEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: DataTableClearEventArgs,
             ___: Any,
@@ -2226,7 +2269,8 @@ class DataTableClearEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -2243,7 +2287,8 @@ class DataTableClearEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -2333,7 +2378,8 @@ class ConstraintCollection:
 
     def ToString(self) -> str: ...
 
-    def add_CollectionChanged(self,
+    def add_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -2344,7 +2390,8 @@ class ConstraintCollection:
     def get_List(self) -> List: ...
     def get_SyncRoot(self) -> object: ...
 
-    def remove_CollectionChanged(self,
+    def remove_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -2426,7 +2473,8 @@ class DataRelation:
     @Nested.setter
     def Nested(self, value): ...
 
-    def OnPropertyChanging(self,
+    def OnPropertyChanging(
+            self,
             _: System.ComponentModel.PropertyChangedEventArgs,
             ) -> None: ...
 
@@ -2616,7 +2664,8 @@ class MergeFailedEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: MergeFailedEventArgs,
             ___: Any,
@@ -2627,7 +2676,8 @@ class MergeFailedEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -2644,7 +2694,8 @@ class MergeFailedEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -2734,7 +2785,8 @@ class DataViewManager:
     def Overloads(self, *args, **kwargs) -> Any: ...
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
 
-    def RelationCollectionChanged(self,
+    def RelationCollectionChanged(
+            self,
             _: object,
             __: System.ComponentModel.CollectionChangeEventArgs,
             ) -> None: ...
@@ -2745,7 +2797,8 @@ class DataViewManager:
     @Site.setter
     def Site(self, value): ...
 
-    def TableCollectionChanged(self,
+    def TableCollectionChanged(
+            self,
             _: object,
             __: System.ComponentModel.CollectionChangeEventArgs,
             ) -> None: ...
@@ -2762,7 +2815,8 @@ class DataViewManager:
     def get_Site(self) -> System.ComponentModel.ISite: ...
     def remove_Disposed(self, _: Any) -> None: ...
 
-    def remove_ListChanged(self,
+    def remove_ListChanged(
+            self,
             _: System.ComponentModel.ListChangedEventHandler,
             ) -> None: ...
 
@@ -2828,11 +2882,13 @@ class DataTableCollection:
 
     def ToString(self) -> str: ...
 
-    def add_CollectionChanged(self,
+    def add_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
-    def add_CollectionChanging(self,
+    def add_CollectionChanging(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -2843,11 +2899,13 @@ class DataTableCollection:
     def get_List(self) -> List: ...
     def get_SyncRoot(self) -> object: ...
 
-    def remove_CollectionChanged(self,
+    def remove_CollectionChanged(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
-    def remove_CollectionChanging(self,
+    def remove_CollectionChanging(
+            self,
             _: System.ComponentModel.CollectionChangeEventHandler,
             ) -> None: ...
 
@@ -2903,7 +2961,8 @@ class DataRowView:
 
     def ToString(self) -> str: ...
 
-    def add_PropertyChanged(self,
+    def add_PropertyChanged(
+            self,
             _: System.ComponentModel.PropertyChangedEventHandler,
             ) -> None: ...
 
@@ -2914,7 +2973,8 @@ class DataRowView:
     def get_Row(self) -> List: ...
     def get_RowVersion(self) -> DataRowVersion: ...
 
-    def remove_PropertyChanged(self,
+    def remove_PropertyChanged(
+            self,
             _: System.ComponentModel.PropertyChangedEventHandler,
             ) -> None: ...
 

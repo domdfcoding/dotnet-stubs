@@ -100,12 +100,14 @@ class MemberInfo:
     def get_Name(self) -> str: ...
     def get_ReflectedType(self) -> Type: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: MemberInfo,
             __: MemberInfo,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: MemberInfo,
             __: MemberInfo,
             ) -> bool: ...
@@ -154,7 +156,8 @@ class MethodBase:
     def GetHashCode(self) -> int: ...
     def GetMethodBody(self) -> MethodBody: ...
 
-    def GetMethodFromHandle(self,
+    def GetMethodFromHandle(
+            self,
             _: System.RuntimeMethodHandle,
             __: System.RuntimeTypeHandle,
             ) -> MethodBase: ...
@@ -163,7 +166,8 @@ class MethodBase:
     def GetParameters(self) -> List[ParameterInfo]: ...
     def GetType(self) -> Type: ...
 
-    def Invoke(self,
+    def Invoke(
+            self,
             _: object,
             __: BindingFlags,
             ___: Binder,
@@ -360,12 +364,14 @@ class MethodBase:
     def get_Name(self) -> str: ...
     def get_ReflectedType(self) -> Type: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: MethodBase,
             __: MethodBase,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: MethodBase,
             __: MethodBase,
             ) -> bool: ...
@@ -418,7 +424,8 @@ class MethodInfo:
     def GetHashCode(self) -> int: ...
     def GetMethodBody(self) -> MethodBody: ...
 
-    def GetMethodFromHandle(self,
+    def GetMethodFromHandle(
+            self,
             _: System.RuntimeMethodHandle,
             __: System.RuntimeTypeHandle,
             ) -> MethodBase: ...
@@ -427,7 +434,8 @@ class MethodInfo:
     def GetParameters(self) -> List[ParameterInfo]: ...
     def GetType(self) -> Type: ...
 
-    def Invoke(self,
+    def Invoke(
+            self,
             _: object,
             __: BindingFlags,
             ___: Binder,
@@ -647,12 +655,14 @@ class MethodInfo:
     def get_ReturnType(self) -> Type: ...
     def get_ReturnTypeCustomAttributes(self) -> ICustomAttributeProvider: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: MethodInfo,
             __: MethodInfo,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: MethodInfo,
             __: MethodInfo,
             ) -> bool: ...
@@ -689,18 +699,21 @@ class Module:
     def GetCustomAttributes(self, _: Type, __: bool) -> List[object]: ...
     def GetCustomAttributesData(self) -> List[CustomAttributeData]: ...
 
-    def GetField(self,
+    def GetField(
+            self,
             _: str,
             __: BindingFlags,
             ) -> FieldInfo: ...
 
-    def GetFields(self,
+    def GetFields(
+            self,
             _: BindingFlags,
             ) -> List[FieldInfo]: ...
 
     def GetHashCode(self) -> int: ...
 
-    def GetMethod(self,
+    def GetMethod(
+            self,
             _: str,
             __: BindingFlags,
             ___: Binder,
@@ -709,7 +722,8 @@ class Module:
             ______: List[ParameterModifier],
             ) -> MethodInfo: ...
 
-    def GetMethodImpl(self,
+    def GetMethodImpl(
+            self,
             _: str,
             __: BindingFlags,
             ___: Binder,
@@ -718,16 +732,19 @@ class Module:
             ______: List[ParameterModifier],
             ) -> MethodInfo: ...
 
-    def GetMethods(self,
+    def GetMethods(
+            self,
             _: BindingFlags,
             ) -> List[MethodInfo]: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
 
-    def GetPEKind(self,
+    def GetPEKind(
+            self,
             _: PortableExecutableKinds,
             __: ImageFileMachine,
             ) -> None: ...
@@ -773,19 +790,22 @@ class Module:
     def Overloads(self, *args, **kwargs) -> Any: ...
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
 
-    def ResolveField(self,
+    def ResolveField(
+            self,
             _: int,
             __: List[Type],
             ___: List[Type],
             ) -> FieldInfo: ...
 
-    def ResolveMember(self,
+    def ResolveMember(
+            self,
             _: int,
             __: List[Type],
             ___: List[Type],
             ) -> MemberInfo: ...
 
-    def ResolveMethod(self,
+    def ResolveMethod(
+            self,
             _: int,
             __: List[Type],
             ___: List[Type],
@@ -812,12 +832,14 @@ class Module:
     def get_Name(self) -> str: ...
     def get_ScopeName(self) -> str: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: Module,
             __: Module,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: Module,
             __: Module,
             ) -> bool: ...
@@ -928,7 +950,8 @@ class TypeInfo:
     def Finalize(self) -> None: ...
     def FindInterfaces(self, _: TypeFilter, __: object) -> List[Type]: ...
 
-    def FindMembers(self,
+    def FindMembers(
+            self,
             _: MemberTypes,
             __: BindingFlags,
             ___: MemberFilter,
@@ -974,7 +997,8 @@ class TypeInfo:
     def GetArrayRank(self) -> int: ...
     def GetAttributeFlagsImpl(self) -> TypeAttributes: ...
 
-    def GetConstructor(self,
+    def GetConstructor(
+            self,
             _: BindingFlags,
             __: Binder,
             ___: CallingConventions,
@@ -982,7 +1006,8 @@ class TypeInfo:
             _____: List[ParameterModifier],
             ) -> ConstructorInfo: ...
 
-    def GetConstructorImpl(self,
+    def GetConstructorImpl(
+            self,
             _: BindingFlags,
             __: Binder,
             ___: CallingConventions,
@@ -990,7 +1015,8 @@ class TypeInfo:
             _____: List[ParameterModifier],
             ) -> ConstructorInfo: ...
 
-    def GetConstructors(self,
+    def GetConstructors(
+            self,
             _: BindingFlags,
             ) -> List[ConstructorInfo]: ...
 
@@ -1009,21 +1035,25 @@ class TypeInfo:
     def GetEnumUnderlyingType(self) -> Type: ...
     def GetEnumValues(self) -> List: ...
 
-    def GetEvent(self,
+    def GetEvent(
+            self,
             _: str,
             __: BindingFlags,
             ) -> EventInfo: ...
 
-    def GetEvents(self,
+    def GetEvents(
+            self,
             _: BindingFlags,
             ) -> List[EventInfo]: ...
 
-    def GetField(self,
+    def GetField(
+            self,
             _: str,
             __: BindingFlags,
             ) -> FieldInfo: ...
 
-    def GetFields(self,
+    def GetFields(
+            self,
             _: BindingFlags,
             ) -> List[FieldInfo]: ...
 
@@ -1035,17 +1065,20 @@ class TypeInfo:
     def GetInterfaceMap(self, _: Type) -> InterfaceMapping: ...
     def GetInterfaces(self) -> List[Type]: ...
 
-    def GetMember(self,
+    def GetMember(
+            self,
             _: str,
             __: MemberTypes,
             ___: BindingFlags,
             ) -> List[MemberInfo]: ...
 
-    def GetMembers(self,
+    def GetMembers(
+            self,
             _: BindingFlags,
             ) -> List[MemberInfo]: ...
 
-    def GetMethod(self,
+    def GetMethod(
+            self,
             _: str,
             __: BindingFlags,
             ___: Binder,
@@ -1054,7 +1087,8 @@ class TypeInfo:
             ______: List[ParameterModifier],
             ) -> MethodInfo: ...
 
-    def GetMethodImpl(self,
+    def GetMethodImpl(
+            self,
             _: str,
             __: BindingFlags,
             ___: Binder,
@@ -1063,18 +1097,21 @@ class TypeInfo:
             ______: List[ParameterModifier],
             ) -> MethodInfo: ...
 
-    def GetMethods(self,
+    def GetMethods(
+            self,
             _: BindingFlags,
             ) -> List[MethodInfo]: ...
 
     def GetNestedType(self, _: str, __: BindingFlags) -> Type: ...
     def GetNestedTypes(self, _: BindingFlags) -> List[Type]: ...
 
-    def GetProperties(self,
+    def GetProperties(
+            self,
             _: BindingFlags,
             ) -> List[PropertyInfo]: ...
 
-    def GetProperty(self,
+    def GetProperty(
+            self,
             _: str,
             __: BindingFlags,
             ___: Binder,
@@ -1083,7 +1120,8 @@ class TypeInfo:
             ______: List[ParameterModifier],
             ) -> PropertyInfo: ...
 
-    def GetPropertyImpl(self,
+    def GetPropertyImpl(
+            self,
             _: str,
             __: BindingFlags,
             ___: Binder,
@@ -1115,7 +1153,8 @@ class TypeInfo:
     @ImplementedInterfaces.setter
     def ImplementedInterfaces(self, value): ...
 
-    def InvokeMember(self,
+    def InvokeMember(
+            self,
             _: str,
             __: BindingFlags,
             ___: Binder,
@@ -1546,7 +1585,8 @@ class TypeFilter:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1563,7 +1603,8 @@ class TypeFilter:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1607,7 +1648,8 @@ class Assembly:
     @CodeBase.setter
     def CodeBase(self, value): ...
 
-    def CreateInstance(self,
+    def CreateInstance(
+            self,
             _: str,
             __: bool,
             ___: BindingFlags,
@@ -1683,14 +1725,16 @@ class Assembly:
     def GetModules(self, _: bool) -> List[Module]: ...
     def GetName(self, _: bool) -> AssemblyName: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
 
     def GetReferencedAssemblies(self) -> List[AssemblyName]: ...
 
-    def GetSatelliteAssembly(self,
+    def GetSatelliteAssembly(
+            self,
             _: System.Globalization.CultureInfo,
             __: System.Version,
             ) -> Assembly: ...
@@ -1730,30 +1774,35 @@ class Assembly:
     @IsFullyTrusted.setter
     def IsFullyTrusted(self, value): ...
 
-    def Load(self,
+    def Load(
+            self,
             _: str,
             __: System.Security.Policy.Evidence,
             ) -> Assembly: ...
 
-    def LoadFile(self,
+    def LoadFile(
+            self,
             _: str,
             __: System.Security.Policy.Evidence,
             ) -> Assembly: ...
 
-    def LoadFrom(self,
+    def LoadFrom(
+            self,
             _: str,
             __: System.Security.Policy.Evidence,
             ___: List[bytes],
             ____: System.Configuration.Assemblies.AssemblyHashAlgorithm,
             ) -> Assembly: ...
 
-    def LoadModule(self,
+    def LoadModule(
+            self,
             _: str,
             __: List[bytes],
             ___: List[bytes],
             ) -> Module: ...
 
-    def LoadWithPartialName(self,
+    def LoadWithPartialName(
+            self,
             _: str,
             __: System.Security.Policy.Evidence,
             ) -> Assembly: ...
@@ -1827,17 +1876,20 @@ class Assembly:
     def get_ReflectionOnly(self) -> bool: ...
     def get_SecurityRuleSet(self) -> System.Security.SecurityRuleSet: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: Assembly,
             __: Assembly,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: Assembly,
             __: Assembly,
             ) -> bool: ...
 
-    def remove_ModuleResolve(self,
+    def remove_ModuleResolve(
+            self,
             _: ModuleResolveEventHandler,
             ) -> None: ...
 
@@ -2060,12 +2112,14 @@ class CustomAttributeNamedArgument:
     def get_MemberName(self) -> str: ...
     def get_TypedValue(self) -> CustomAttributeTypedArgument: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: CustomAttributeNamedArgument,
             __: CustomAttributeNamedArgument,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: CustomAttributeNamedArgument,
             __: CustomAttributeNamedArgument,
             ) -> bool: ...
@@ -2116,7 +2170,8 @@ class ConstructorInfo:
     def GetHashCode(self) -> int: ...
     def GetMethodBody(self) -> MethodBody: ...
 
-    def GetMethodFromHandle(self,
+    def GetMethodFromHandle(
+            self,
             _: System.RuntimeMethodHandle,
             __: System.RuntimeTypeHandle,
             ) -> MethodBase: ...
@@ -2125,7 +2180,8 @@ class ConstructorInfo:
     def GetParameters(self) -> List[ParameterInfo]: ...
     def GetType(self) -> Type: ...
 
-    def Invoke(self,
+    def Invoke(
+            self,
             _: object,
             __: BindingFlags,
             ___: Binder,
@@ -2323,12 +2379,14 @@ class ConstructorInfo:
     def get_Name(self) -> str: ...
     def get_ReflectedType(self) -> Type: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: ConstructorInfo,
             __: ConstructorInfo,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: ConstructorInfo,
             __: ConstructorInfo,
             ) -> bool: ...
@@ -2362,12 +2420,14 @@ class CustomAttributeTypedArgument:
     def get_ArgumentType(self) -> Type: ...
     def get_Value(self) -> object: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: CustomAttributeTypedArgument,
             __: CustomAttributeTypedArgument,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: CustomAttributeTypedArgument,
             __: CustomAttributeTypedArgument,
             ) -> bool: ...
@@ -2579,7 +2639,8 @@ class CustomAttributeData:
     def Equals(self, _: object) -> bool: ...
     def Finalize(self) -> None: ...
 
-    def GetCustomAttributes(self,
+    def GetCustomAttributes(
+            self,
             _: Module,
             ) -> List[CustomAttributeData]: ...
 
@@ -2873,14 +2934,16 @@ class Binder:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BindToField(self,
+    def BindToField(
+            self,
             _: BindingFlags,
             __: List[FieldInfo],
             ___: object,
             ____: System.Globalization.CultureInfo,
             ) -> FieldInfo: ...
 
-    def BindToMethod(self,
+    def BindToMethod(
+            self,
             _: BindingFlags,
             __: List[MethodBase],
             ___: List[object],
@@ -2890,7 +2953,8 @@ class Binder:
             _______: object,
             ) -> MethodBase: ...
 
-    def ChangeType(self,
+    def ChangeType(
+            self,
             _: object,
             __: Type,
             ___: System.Globalization.CultureInfo,
@@ -2905,14 +2969,16 @@ class Binder:
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
     def ReorderArgumentArray(self, _: List[object], __: object) -> None: ...
 
-    def SelectMethod(self,
+    def SelectMethod(
+            self,
             _: BindingFlags,
             __: List[MethodBase],
             ___: List[Type],
             ____: List[ParameterModifier],
             ) -> MethodBase: ...
 
-    def SelectProperty(self,
+    def SelectProperty(
+            self,
             _: BindingFlags,
             __: List[PropertyInfo],
             ___: Type,
@@ -2971,7 +3037,8 @@ class ModuleResolveEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: System.ResolveEventArgs,
             ___: Any,
@@ -2982,7 +3049,8 @@ class ModuleResolveEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -2999,14 +3067,16 @@ class ModuleResolveEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
 
     def GetType(self) -> Type: ...
 
-    def Invoke(self,
+    def Invoke(
+            self,
             _: object,
             __: System.ResolveEventArgs,
             ) -> Module: ...
@@ -3076,7 +3146,8 @@ class MemberFilter:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: MemberInfo,
             __: object,
             ___: Any,
@@ -3087,7 +3158,8 @@ class MemberFilter:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -3104,7 +3176,8 @@ class MemberFilter:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -3321,12 +3394,14 @@ class EventInfo:
     def get_ReflectedType(self) -> Type: ...
     def get_RemoveMethod(self) -> MethodInfo: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: EventInfo,
             __: EventInfo,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: EventInfo,
             __: EventInfo,
             ) -> bool: ...
@@ -3423,7 +3498,8 @@ class PropertyInfo:
     def GetSetMethod(self, _: bool) -> MethodInfo: ...
     def GetType(self) -> Type: ...
 
-    def GetValue(self,
+    def GetValue(
+            self,
             _: object,
             __: BindingFlags,
             ___: Binder,
@@ -3487,7 +3563,8 @@ class PropertyInfo:
     @SetMethod.setter
     def SetMethod(self, value): ...
 
-    def SetValue(self,
+    def SetValue(
+            self,
             _: object,
             __: object,
             ___: BindingFlags,
@@ -3512,12 +3589,14 @@ class PropertyInfo:
     def get_ReflectedType(self) -> Type: ...
     def get_SetMethod(self) -> MethodInfo: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: PropertyInfo,
             __: PropertyInfo,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: PropertyInfo,
             __: PropertyInfo,
             ) -> bool: ...
@@ -3598,7 +3677,8 @@ class FieldInfo:
     def GetCustomAttributes(self, _: Type, __: bool) -> List[object]: ...
     def GetCustomAttributesData(self) -> List[CustomAttributeData]: ...
 
-    def GetFieldFromHandle(self,
+    def GetFieldFromHandle(
+            self,
             _: System.RuntimeFieldHandle,
             __: System.RuntimeTypeHandle,
             ) -> FieldInfo: ...
@@ -3738,7 +3818,8 @@ class FieldInfo:
     @ReflectedType.setter
     def ReflectedType(self, value): ...
 
-    def SetValue(self,
+    def SetValue(
+            self,
             _: object,
             __: object,
             ___: BindingFlags,
@@ -3774,12 +3855,14 @@ class FieldInfo:
     def get_Name(self) -> str: ...
     def get_ReflectedType(self) -> Type: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: FieldInfo,
             __: FieldInfo,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: FieldInfo,
             __: FieldInfo,
             ) -> bool: ...
@@ -3875,7 +3958,8 @@ class AssemblyName:
     def GetAssemblyName(self, _: str) -> AssemblyName: ...
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -3915,7 +3999,8 @@ class AssemblyName:
 
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
 
-    def ReferenceMatchesDefinition(self,
+    def ReferenceMatchesDefinition(
+            self,
             _: AssemblyName,
             __: AssemblyName,
             ) -> bool: ...
@@ -3955,20 +4040,23 @@ class AssemblyName:
     def set_CultureName(self, _: str) -> None: ...
     def set_Flags(self, _: AssemblyNameFlags) -> None: ...
 
-    def set_HashAlgorithm(self,
+    def set_HashAlgorithm(
+            self,
             _: System.Configuration.Assemblies.AssemblyHashAlgorithm,
             ) -> None: ...
 
     def set_KeyPair(self, _: StrongNameKeyPair) -> None: ...
     def set_Name(self, _: str) -> None: ...
 
-    def set_ProcessorArchitecture(self,
+    def set_ProcessorArchitecture(
+            self,
             _: ProcessorArchitecture,
             ) -> None: ...
 
     def set_Version(self, _: System.Version) -> None: ...
 
-    def set_VersionCompatibility(self,
+    def set_VersionCompatibility(
+            self,
             _: System.Configuration.Assemblies.AssemblyVersionCompatibility,
             ) -> None: ...
 

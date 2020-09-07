@@ -42,7 +42,8 @@ class FileSecurity:
     @AccessRightType.setter
     def AccessRightType(self, value): ...
 
-    def AccessRuleFactory(self,
+    def AccessRuleFactory(
+            self,
             _: System.Security.Principal.IdentityReference,
             __: int,
             ___: bool,
@@ -90,7 +91,8 @@ class FileSecurity:
     @AreAuditRulesProtected.setter
     def AreAuditRulesProtected(self, value): ...
 
-    def AuditRuleFactory(self,
+    def AuditRuleFactory(
+            self,
             _: System.Security.Principal.IdentityReference,
             __: int,
             ___: bool,
@@ -115,13 +117,15 @@ class FileSecurity:
     def ExceptionFromErrorCode(self, *args, **kwargs) -> Any: ...
     def Finalize(self) -> None: ...
 
-    def GetAccessRules(self,
+    def GetAccessRules(
+            self,
             _: bool,
             __: bool,
             ___: Type,
             ) -> AuthorizationRuleCollection: ...
 
-    def GetAuditRules(self,
+    def GetAuditRules(
+            self,
             _: bool,
             __: bool,
             ___: Type,
@@ -132,7 +136,8 @@ class FileSecurity:
     def GetOwner(self, _: Type) -> System.Security.Principal.IdentityReference: ...
     def GetSecurityDescriptorBinaryForm(self) -> List[bytes]: ...
 
-    def GetSecurityDescriptorSddlForm(self,
+    def GetSecurityDescriptorSddlForm(
+            self,
             _: AccessControlSections,
             ) -> str: ...
 
@@ -159,25 +164,29 @@ class FileSecurity:
     def IsSddlConversionSupported(self) -> bool: ...
     def MemberwiseClone(self) -> object: ...
 
-    def ModifyAccess(self,
+    def ModifyAccess(
+            self,
             _: AccessControlModification,
             __: AccessRule,
             ___: bool,
             ) -> bool: ...
 
-    def ModifyAccessRule(self,
+    def ModifyAccessRule(
+            self,
             _: AccessControlModification,
             __: AccessRule,
             ___: bool,
             ) -> bool: ...
 
-    def ModifyAudit(self,
+    def ModifyAudit(
+            self,
             _: AccessControlModification,
             __: AuditRule,
             ___: bool,
             ) -> bool: ...
 
-    def ModifyAuditRule(self,
+    def ModifyAuditRule(
+            self,
             _: AccessControlModification,
             __: AuditRule,
             ___: bool,
@@ -191,7 +200,8 @@ class FileSecurity:
     @OwnerModified.setter
     def OwnerModified(self, value): ...
 
-    def Persist(self,
+    def Persist(
+            self,
             _: bool,
             __: str,
             ___: AccessControlSections,
@@ -205,14 +215,16 @@ class FileSecurity:
     def RemoveAccessRule(self, _: AccessRule) -> bool: ...
     def RemoveAccessRuleAll(self, _: AccessRule) -> None: ...
 
-    def RemoveAccessRuleSpecific(self,
+    def RemoveAccessRuleSpecific(
+            self,
             _: AccessRule,
             ) -> None: ...
 
     def RemoveAuditRule(self, _: AuditRule) -> bool: ...
     def RemoveAuditRuleAll(self, _: AuditRule) -> None: ...
 
-    def RemoveAuditRuleSpecific(self,
+    def RemoveAuditRuleSpecific(
+            self,
             _: AuditRule,
             ) -> None: ...
 
@@ -224,12 +236,14 @@ class FileSecurity:
     def SetGroup(self, _: System.Security.Principal.IdentityReference) -> None: ...
     def SetOwner(self, _: System.Security.Principal.IdentityReference) -> None: ...
 
-    def SetSecurityDescriptorBinaryForm(self,
+    def SetSecurityDescriptorBinaryForm(
+            self,
             _: List[bytes],
             __: AccessControlSections,
             ) -> None: ...
 
-    def SetSecurityDescriptorSddlForm(self,
+    def SetSecurityDescriptorSddlForm(
+            self,
             _: str,
             __: AccessControlSections,
             ) -> None: ...
@@ -515,7 +529,8 @@ class AuthorizationRuleCollection:
     def __init__(self, *args, **kwargs) -> Any: ...
     def AddRule(self, _: AuthorizationRule) -> None: ...
 
-    def CopyTo(self,
+    def CopyTo(
+            self,
             _: List[AuthorizationRule],
             __: int,
             ) -> None: ...

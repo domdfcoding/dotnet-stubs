@@ -37,11 +37,13 @@ class PermissionSet:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def AddPermission(self,
+    def AddPermission(
+            self,
             _: IPermission,
             ) -> IPermission: ...
 
-    def AddPermissionImpl(self,
+    def AddPermissionImpl(
+            self,
             _: IPermission,
             ) -> IPermission: ...
 
@@ -69,7 +71,8 @@ class PermissionSet:
     def GetPermissionImpl(self, _: Type) -> IPermission: ...
     def GetType(self) -> Type: ...
 
-    def Intersect(self,
+    def Intersect(
+            self,
             _: PermissionSet,
             ) -> PermissionSet: ...
 
@@ -98,11 +101,13 @@ class PermissionSet:
     def RemovePermissionImpl(self, _: Type) -> IPermission: ...
     def RevertAssert(self) -> None: ...
 
-    def SetPermission(self,
+    def SetPermission(
+            self,
             _: IPermission,
             ) -> IPermission: ...
 
-    def SetPermissionImpl(self,
+    def SetPermissionImpl(
+            self,
             _: IPermission,
             ) -> IPermission: ...
 

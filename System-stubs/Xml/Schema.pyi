@@ -60,7 +60,8 @@ class XmlSchema:
     @BlockDefault.setter
     def BlockDefault(self, value): ...
 
-    def Compile(self,
+    def Compile(
+            self,
             _: ValidationEventHandler,
             __: System.Xml.XmlResolver,
             ) -> None: ...
@@ -156,7 +157,8 @@ class XmlSchema:
     @Parent.setter
     def Parent(self, value): ...
 
-    def Read(self,
+    def Read(
+            self,
             _: System.IO.TextReader,
             __: ValidationEventHandler,
             ) -> XmlSchema: ...
@@ -195,7 +197,8 @@ class XmlSchema:
     @Version.setter
     def Version(self, value): ...
 
-    def Write(self,
+    def Write(
+            self,
             _: System.IO.TextWriter,
             __: System.Xml.XmlNamespaceManager,
             ) -> None: ...
@@ -230,7 +233,8 @@ class XmlSchema:
     def set_LineNumber(self, _: int) -> None: ...
     def set_LinePosition(self, _: int) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -376,11 +380,13 @@ class XmlSchemaSimpleType:
 
     def Finalize(self) -> None: ...
 
-    def GetBuiltInComplexType(self,
+    def GetBuiltInComplexType(
+            self,
             _: XmlTypeCode,
             ) -> XmlSchemaComplexType: ...
 
-    def GetBuiltInSimpleType(self,
+    def GetBuiltInSimpleType(
+            self,
             _: XmlTypeCode,
             ) -> XmlSchemaSimpleType: ...
 
@@ -393,7 +399,8 @@ class XmlSchemaSimpleType:
     @Id.setter
     def Id(self, value): ...
 
-    def IsDerivedFrom(self,
+    def IsDerivedFrom(
+            self,
             _: XmlSchemaType,
             __: XmlSchemaType,
             ___: XmlSchemaDerivationMethod,
@@ -495,7 +502,8 @@ class XmlSchemaSimpleType:
     def set_LinePosition(self, _: int) -> None: ...
     def set_Name(self, _: str) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -577,7 +585,8 @@ class XmlSchemaSet:
     @XmlResolver.setter
     def XmlResolver(self, value): ...
 
-    def add_ValidationEventHandler(self,
+    def add_ValidationEventHandler(
+            self,
             _: ValidationEventHandler,
             ) -> None: ...
 
@@ -589,11 +598,13 @@ class XmlSchemaSet:
     def get_IsCompiled(self) -> bool: ...
     def get_NameTable(self) -> System.Xml.XmlNameTable: ...
 
-    def remove_ValidationEventHandler(self,
+    def remove_ValidationEventHandler(
+            self,
             _: ValidationEventHandler,
             ) -> None: ...
 
-    def set_CompilationSettings(self,
+    def set_CompilationSettings(
+            self,
             _: XmlSchemaCompilationSettings,
             ) -> None: ...
 
@@ -677,11 +688,13 @@ class XmlSchemaType:
 
     def Finalize(self) -> None: ...
 
-    def GetBuiltInComplexType(self,
+    def GetBuiltInComplexType(
+            self,
             _: XmlTypeCode,
             ) -> XmlSchemaComplexType: ...
 
-    def GetBuiltInSimpleType(self,
+    def GetBuiltInSimpleType(
+            self,
             _: XmlTypeCode,
             ) -> XmlSchemaSimpleType: ...
 
@@ -694,7 +707,8 @@ class XmlSchemaType:
     @Id.setter
     def Id(self, value): ...
 
-    def IsDerivedFrom(self,
+    def IsDerivedFrom(
+            self,
             _: XmlSchemaType,
             __: XmlSchemaType,
             ___: XmlSchemaDerivationMethod,
@@ -794,7 +808,8 @@ class XmlSchemaType:
     def set_LinePosition(self, _: int) -> None: ...
     def set_Name(self, _: str) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -856,7 +871,8 @@ class XmlSchemaObject:
     def set_LineNumber(self, _: int) -> None: ...
     def set_LinePosition(self, _: int) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -950,7 +966,8 @@ class XmlSchemaContentModel:
     def set_LineNumber(self, _: int) -> None: ...
     def set_LinePosition(self, _: int) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -963,7 +980,8 @@ class XmlSchemaDatatype:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def ChangeType(self,
+    def ChangeType(
+            self,
             _: object,
             __: Type,
             ___: System.Xml.IXmlNamespaceResolver,
@@ -977,7 +995,8 @@ class XmlSchemaDatatype:
     def MemberwiseClone(self) -> object: ...
     def Overloads(self, *args, **kwargs) -> Any: ...
 
-    def ParseValue(self,
+    def ParseValue(
+            self,
             _: str,
             __: System.Xml.XmlNameTable,
             ___: System.Xml.IXmlNamespaceResolver,
@@ -1052,7 +1071,8 @@ class XmlSchemaObjectTable:
 
     def get_Count(self) -> int: ...
 
-    def get_Item(self,
+    def get_Item(
+            self,
             _: System.Xml.XmlQualifiedName,
             ) -> XmlSchemaObject: ...
 
@@ -1153,13 +1173,15 @@ class XmlSchemaAnyAttribute:
     def set_LinePosition(self, _: int) -> None: ...
     def set_Namespace(self, _: str) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
     def set_Parent(self, _: XmlSchemaObject) -> None: ...
 
-    def set_ProcessContents(self,
+    def set_ProcessContents(
+            self,
             _: XmlSchemaContentProcessing,
             ) -> None: ...
 
@@ -1271,11 +1293,13 @@ class XmlSchemaComplexType:
 
     def Finalize(self) -> None: ...
 
-    def GetBuiltInComplexType(self,
+    def GetBuiltInComplexType(
+            self,
             _: XmlTypeCode,
             ) -> XmlSchemaComplexType: ...
 
-    def GetBuiltInSimpleType(self,
+    def GetBuiltInSimpleType(
+            self,
             _: XmlTypeCode,
             ) -> XmlSchemaSimpleType: ...
 
@@ -1294,7 +1318,8 @@ class XmlSchemaComplexType:
     @IsAbstract.setter
     def IsAbstract(self, value): ...
 
-    def IsDerivedFrom(self,
+    def IsDerivedFrom(
+            self,
             _: XmlSchemaType,
             __: XmlSchemaType,
             ___: XmlSchemaDerivationMethod,
@@ -1415,7 +1440,8 @@ class XmlSchemaComplexType:
     def set_LinePosition(self, _: int) -> None: ...
     def set_Name(self, _: str) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -1535,7 +1561,8 @@ class XmlSchemaParticle:
     def set_MinOccurs(self, _: float) -> None: ...
     def set_MinOccursString(self, _: str) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -1668,7 +1695,8 @@ class ValidationEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: ValidationEventArgs,
             ___: Any,
@@ -1679,7 +1707,8 @@ class ValidationEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -1696,7 +1725,8 @@ class ValidationEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -1806,7 +1836,8 @@ class XmlSchemaAnnotation:
     def set_LineNumber(self, _: int) -> None: ...
     def set_LinePosition(self, _: int) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -1931,7 +1962,8 @@ class XmlSchemaSimpleTypeContent:
     def set_LineNumber(self, _: int) -> None: ...
     def set_LinePosition(self, _: int) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -2018,7 +2050,8 @@ class XmlSchemaContent:
     def set_LineNumber(self, _: int) -> None: ...
     def set_LinePosition(self, _: int) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -2068,7 +2101,8 @@ class XmlSchemaException:
 
     def GetBaseException(self) -> Exception: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -2608,7 +2642,8 @@ class XmlSchemaElement:
     def set_MinOccursString(self, _: str) -> None: ...
     def set_Name(self, _: str) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 
@@ -2781,7 +2816,8 @@ class XmlSchemaAttribute:
     def set_LinePosition(self, _: int) -> None: ...
     def set_Name(self, _: str) -> None: ...
 
-    def set_Namespaces(self,
+    def set_Namespaces(
+            self,
             _: System.Xml.Serialization.XmlSerializerNamespaces,
             ) -> None: ...
 

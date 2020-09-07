@@ -57,7 +57,8 @@ class CancellationToken:
     def Overloads(self, *args, **kwargs) -> Any: ...
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
 
-    def Register(self,
+    def Register(
+            self,
             _: System.Action[object],
             __: object,
             ___: bool,
@@ -77,12 +78,14 @@ class CancellationToken:
     def get_None(self) -> CancellationToken: ...
     def get_WaitHandle(self) -> WaitHandle: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: CancellationToken,
             __: CancellationToken,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: CancellationToken,
             __: CancellationToken,
             ) -> bool: ...
@@ -118,7 +121,8 @@ class WaitHandle:
     @SafeWaitHandle.setter
     def SafeWaitHandle(self, value): ...
 
-    def SignalAndWait(self,
+    def SignalAndWait(
+            self,
             _: WaitHandle,
             __: WaitHandle,
             ___: int,
@@ -149,12 +153,14 @@ class CancellationTokenRegistration:
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
     def ToString(self) -> str: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: CancellationTokenRegistration,
             __: CancellationTokenRegistration,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: CancellationTokenRegistration,
             __: CancellationTokenRegistration,
             ) -> bool: ...

@@ -70,7 +70,8 @@ class XmlReader:
 
     def Close(self) -> None: ...
 
-    def Create(self,
+    def Create(
+            self,
             _: System.IO.TextReader,
             __: XmlReaderSettings,
             ___: str,
@@ -183,14 +184,16 @@ class XmlReader:
     def ReadAttributeValue(self) -> bool: ...
     def ReadContentAs(self, _: Type, __: IXmlNamespaceResolver) -> object: ...
 
-    def ReadContentAsAsync(self,
+    def ReadContentAsAsync(
+            self,
             _: Type,
             __: IXmlNamespaceResolver,
             ) -> System.Threading.Tasks.Task[object]: ...
 
     def ReadContentAsBase64(self, _: List[bytes], __: int, ___: int) -> int: ...
 
-    def ReadContentAsBase64Async(self,
+    def ReadContentAsBase64Async(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -198,7 +201,8 @@ class XmlReader:
 
     def ReadContentAsBinHex(self, _: List[bytes], __: int, ___: int) -> int: ...
 
-    def ReadContentAsBinHexAsync(self,
+    def ReadContentAsBinHexAsync(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -217,21 +221,24 @@ class XmlReader:
     def ReadContentAsString(self) -> str: ...
     def ReadContentAsStringAsync(self) -> System.Threading.Tasks.Task[str]: ...
 
-    def ReadElementContentAs(self,
+    def ReadElementContentAs(
+            self,
             _: Type,
             __: IXmlNamespaceResolver,
             ___: str,
             ____: str,
             ) -> object: ...
 
-    def ReadElementContentAsAsync(self,
+    def ReadElementContentAsAsync(
+            self,
             _: Type,
             __: IXmlNamespaceResolver,
             ) -> System.Threading.Tasks.Task[object]: ...
 
     def ReadElementContentAsBase64(self, _: List[bytes], __: int, ___: int) -> int: ...
 
-    def ReadElementContentAsBase64Async(self,
+    def ReadElementContentAsBase64Async(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -239,7 +246,8 @@ class XmlReader:
 
     def ReadElementContentAsBinHex(self, _: List[bytes], __: int, ___: int) -> int: ...
 
-    def ReadElementContentAsBinHexAsync(self,
+    def ReadElementContentAsBinHexAsync(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -277,7 +285,8 @@ class XmlReader:
     def ReadToNextSibling(self, _: str, __: str) -> bool: ...
     def ReadValueChunk(self, _: List[str], __: int, ___: int) -> int: ...
 
-    def ReadValueChunkAsync(self,
+    def ReadValueChunkAsync(
+            self,
             _: List[str],
             __: int,
             ___: int,
@@ -380,7 +389,8 @@ class XmlWriter:
     def ToString(self) -> str: ...
     def WriteAttributeString(self, _: str, __: str, ___: str, ____: str) -> None: ...
 
-    def WriteAttributeStringAsync(self,
+    def WriteAttributeStringAsync(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -389,14 +399,16 @@ class XmlWriter:
 
     def WriteAttributes(self, _: XmlReader, __: bool) -> None: ...
 
-    def WriteAttributesAsync(self,
+    def WriteAttributesAsync(
+            self,
             _: XmlReader,
             __: bool,
             ) -> System.Threading.Tasks.Task: ...
 
     def WriteBase64(self, _: List[bytes], __: int, ___: int) -> None: ...
 
-    def WriteBase64Async(self,
+    def WriteBase64Async(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -404,7 +416,8 @@ class XmlWriter:
 
     def WriteBinHex(self, _: List[bytes], __: int, ___: int) -> None: ...
 
-    def WriteBinHexAsync(self,
+    def WriteBinHexAsync(
+            self,
             _: List[bytes],
             __: int,
             ___: int,
@@ -416,7 +429,8 @@ class XmlWriter:
     def WriteCharEntityAsync(self, _: str) -> System.Threading.Tasks.Task: ...
     def WriteChars(self, _: List[str], __: int, ___: int) -> None: ...
 
-    def WriteCharsAsync(self,
+    def WriteCharsAsync(
+            self,
             _: List[str],
             __: int,
             ___: int,
@@ -426,7 +440,8 @@ class XmlWriter:
     def WriteCommentAsync(self, _: str) -> System.Threading.Tasks.Task: ...
     def WriteDocType(self, _: str, __: str, ___: str, ____: str) -> None: ...
 
-    def WriteDocTypeAsync(self,
+    def WriteDocTypeAsync(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -435,7 +450,8 @@ class XmlWriter:
 
     def WriteElementString(self, _: str, __: str, ___: str, ____: str) -> None: ...
 
-    def WriteElementStringAsync(self,
+    def WriteElementStringAsync(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -458,14 +474,16 @@ class XmlWriter:
     def WriteNmTokenAsync(self, _: str) -> System.Threading.Tasks.Task: ...
     def WriteNode(self, _: Any, __: bool) -> None: ...
 
-    def WriteNodeAsync(self,
+    def WriteNodeAsync(
+            self,
             _: XmlReader,
             __: bool,
             ) -> System.Threading.Tasks.Task: ...
 
     def WriteProcessingInstruction(self, _: str, __: str) -> None: ...
 
-    def WriteProcessingInstructionAsync(self,
+    def WriteProcessingInstructionAsync(
+            self,
             _: str,
             __: str,
             ) -> System.Threading.Tasks.Task: ...
@@ -476,7 +494,8 @@ class XmlWriter:
     def WriteRawAsync(self, _: str) -> System.Threading.Tasks.Task: ...
     def WriteStartAttribute(self, _: str, __: str, ___: str) -> None: ...
 
-    def WriteStartAttributeAsync(self,
+    def WriteStartAttributeAsync(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -486,7 +505,8 @@ class XmlWriter:
     def WriteStartDocumentAsync(self, _: bool) -> System.Threading.Tasks.Task: ...
     def WriteStartElement(self, _: str, __: str, ___: str) -> None: ...
 
-    def WriteStartElementAsync(self,
+    def WriteStartElementAsync(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -502,7 +522,8 @@ class XmlWriter:
     def WriteStringAsync(self, _: str) -> System.Threading.Tasks.Task: ...
     def WriteSurrogateCharEntity(self, _: str, __: str) -> None: ...
 
-    def WriteSurrogateCharEntityAsync(self,
+    def WriteSurrogateCharEntityAsync(
+            self,
             _: str,
             __: str,
             ) -> System.Threading.Tasks.Task: ...
@@ -658,7 +679,8 @@ class XmlReaderSettings:
     @XmlResolver.setter
     def XmlResolver(self, value): ...
 
-    def add_ValidationEventHandler(self,
+    def add_ValidationEventHandler(
+            self,
             _: Schema.ValidationEventHandler,
             ) -> None: ...
 
@@ -680,7 +702,8 @@ class XmlReaderSettings:
     def get_ValidationFlags(self) -> Schema.XmlSchemaValidationFlags: ...
     def get_ValidationType(self) -> ValidationType: ...
 
-    def remove_ValidationEventHandler(self,
+    def remove_ValidationEventHandler(
+            self,
             _: Schema.ValidationEventHandler,
             ) -> None: ...
 
@@ -700,7 +723,8 @@ class XmlReaderSettings:
     def set_ProhibitDtd(self, _: bool) -> None: ...
     def set_Schemas(self, _: Schema.XmlSchemaSet) -> None: ...
 
-    def set_ValidationFlags(self,
+    def set_ValidationFlags(
+            self,
             _: Schema.XmlSchemaValidationFlags,
             ) -> None: ...
 
@@ -926,7 +950,8 @@ class XmlResolver:
     def Finalize(self) -> None: ...
     def GetEntity(self, _: Any, __: str, ___: Type) -> object: ...
 
-    def GetEntityAsync(self,
+    def GetEntityAsync(
+            self,
             _: Any,
             __: str,
             ___: Type,
@@ -979,12 +1004,14 @@ class XmlQualifiedName:
     def get_Name(self) -> str: ...
     def get_Namespace(self) -> str: ...
 
-    def op_Equality(self,
+    def op_Equality(
+            self,
             _: XmlQualifiedName,
             __: XmlQualifiedName,
             ) -> bool: ...
 
-    def op_Inequality(self,
+    def op_Inequality(
+            self,
             _: XmlQualifiedName,
             __: XmlQualifiedName,
             ) -> bool: ...
@@ -1049,12 +1076,14 @@ class XmlAttribute:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -1155,7 +1184,8 @@ class XmlAttribute:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -1166,12 +1196,14 @@ class XmlAttribute:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -1349,12 +1381,14 @@ class XmlNode:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -1449,7 +1483,8 @@ class XmlNode:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -1460,12 +1495,14 @@ class XmlNode:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -1592,12 +1629,14 @@ class XmlAttributeCollection:
     def GetNamedItem(self, _: str, __: str) -> XmlNode: ...
     def GetType(self) -> Type: ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlAttribute,
             __: XmlAttribute,
             ) -> XmlAttribute: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlAttribute,
             __: XmlAttribute,
             ) -> XmlAttribute: ...
@@ -1686,12 +1725,14 @@ class XmlElement:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -1796,7 +1837,8 @@ class XmlElement:
     def RemoveAttributeNode(self, _: str, __: str) -> XmlAttribute: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -1807,12 +1849,14 @@ class XmlElement:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -1919,7 +1963,8 @@ class XmlDocument:
     def CreateCDataSection(self, _: str) -> XmlCDataSection: ...
     def CreateComment(self, _: str) -> XmlComment: ...
 
-    def CreateDefaultAttribute(self,
+    def CreateDefaultAttribute(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -1927,7 +1972,8 @@ class XmlDocument:
 
     def CreateDocumentFragment(self) -> XmlDocumentFragment: ...
 
-    def CreateDocumentType(self,
+    def CreateDocumentType(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -1938,26 +1984,30 @@ class XmlDocument:
     def CreateEntityReference(self, _: str) -> XmlEntityReference: ...
     def CreateNavigator(self, _: XmlNode) -> Any: ...
 
-    def CreateNode(self,
+    def CreateNode(
+            self,
             _: XmlNodeType,
             __: str,
             ___: str,
             ____: str,
             ) -> XmlNode: ...
 
-    def CreateProcessingInstruction(self,
+    def CreateProcessingInstruction(
+            self,
             _: str,
             __: str,
             ) -> XmlProcessingInstruction: ...
 
-    def CreateSignificantWhitespace(self,
+    def CreateSignificantWhitespace(
+            self,
             _: str,
             ) -> XmlSignificantWhitespace: ...
 
     def CreateTextNode(self, _: str) -> XmlText: ...
     def CreateWhitespace(self, _: str) -> XmlWhitespace: ...
 
-    def CreateXmlDeclaration(self,
+    def CreateXmlDeclaration(
+            self,
             _: str,
             __: str,
             ___: str,
@@ -2018,12 +2068,14 @@ class XmlDocument:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2141,7 +2193,8 @@ class XmlDocument:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2160,12 +2213,14 @@ class XmlDocument:
     @Schemas.setter
     def Schemas(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -2173,7 +2228,8 @@ class XmlDocument:
     def Supports(self, _: str, __: str) -> bool: ...
     def ToString(self) -> str: ...
 
-    def Validate(self,
+    def Validate(
+            self,
             _: Schema.ValidationEventHandler,
             __: XmlNode,
             ) -> None: ...
@@ -2302,12 +2358,14 @@ class XmlEntityReference:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2402,7 +2460,8 @@ class XmlEntityReference:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2413,12 +2472,14 @@ class XmlEntityReference:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -2531,12 +2592,14 @@ class XmlSignificantWhitespace:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2639,7 +2702,8 @@ class XmlSignificantWhitespace:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2652,12 +2716,14 @@ class XmlSignificantWhitespace:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -2765,12 +2831,14 @@ class XmlDocumentFragment:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2865,7 +2933,8 @@ class XmlDocumentFragment:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -2876,12 +2945,14 @@ class XmlDocumentFragment:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -2994,12 +3065,14 @@ class XmlText:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3102,7 +3175,8 @@ class XmlText:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3115,12 +3189,14 @@ class XmlText:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -3238,12 +3314,14 @@ class XmlWhitespace:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3346,7 +3424,8 @@ class XmlWhitespace:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3359,12 +3438,14 @@ class XmlWhitespace:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -3479,12 +3560,14 @@ class XmlDeclaration:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3579,7 +3662,8 @@ class XmlDeclaration:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3590,12 +3674,14 @@ class XmlDeclaration:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -3836,12 +3922,14 @@ class XmlCDataSection:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3944,7 +4032,8 @@ class XmlCDataSection:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -3957,12 +4046,14 @@ class XmlCDataSection:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -4079,12 +4170,14 @@ class XmlComment:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -4187,7 +4280,8 @@ class XmlComment:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -4200,12 +4294,14 @@ class XmlComment:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -4320,12 +4416,14 @@ class XmlDocumentType:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -4438,7 +4536,8 @@ class XmlDocumentType:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -4449,12 +4548,14 @@ class XmlDocumentType:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -4577,12 +4678,14 @@ class XmlProcessingInstruction:
     @InnerXml.setter
     def InnerXml(self, value): ...
 
-    def InsertAfter(self,
+    def InsertAfter(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
 
-    def InsertBefore(self,
+    def InsertBefore(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -4677,7 +4780,8 @@ class XmlProcessingInstruction:
     def RemoveAll(self) -> None: ...
     def RemoveChild(self, _: XmlNode) -> XmlNode: ...
 
-    def ReplaceChild(self,
+    def ReplaceChild(
+            self,
             _: XmlNode,
             __: XmlNode,
             ) -> XmlNode: ...
@@ -4688,12 +4792,14 @@ class XmlProcessingInstruction:
     @SchemaInfo.setter
     def SchemaInfo(self, value): ...
 
-    def SelectNodes(self,
+    def SelectNodes(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNodeList: ...
 
-    def SelectSingleNode(self,
+    def SelectSingleNode(
+            self,
             _: str,
             __: XmlNamespaceManager,
             ) -> XmlNode: ...
@@ -4752,7 +4858,8 @@ class XmlNodeChangedEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: XmlNodeChangedEventArgs,
             ___: Any,
@@ -4763,7 +4870,8 @@ class XmlNodeChangedEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -4780,7 +4888,8 @@ class XmlNodeChangedEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...

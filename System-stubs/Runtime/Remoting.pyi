@@ -51,7 +51,8 @@ class ObjRef:
     def Finalize(self) -> None: ...
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...

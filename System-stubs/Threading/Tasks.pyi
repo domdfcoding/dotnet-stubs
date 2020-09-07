@@ -44,11 +44,13 @@ class Task:
 
     def CompletedTask(self, *args, **kwargs) -> Any: ...
 
-    def ConfigureAwait(self,
+    def ConfigureAwait(
+            self,
             _: bool,
             ) -> System.Runtime.CompilerServices.ConfiguredTaskAwaitable: ...
 
-    def ContinueWith(self,
+    def ContinueWith(
+            self,
             _: System.Action[Task, object],
             __: object,
             ___: System.Threading.CancellationToken,
@@ -64,7 +66,8 @@ class Task:
 
     def CurrentId(self, *args, **kwargs) -> Any: ...
 
-    def Delay(self,
+    def Delay(
+            self,
             _: int,
             __: System.Threading.CancellationToken,
             ) -> Task: ...
@@ -81,7 +84,8 @@ class Task:
     def Factory(self, *args, **kwargs) -> Any: ...
     def Finalize(self) -> None: ...
 
-    def FromCanceled(self,
+    def FromCanceled(
+            self,
             _: System.Threading.CancellationToken,
             ) -> Task: ...
 
@@ -119,7 +123,8 @@ class Task:
     def Overloads(self, *args, **kwargs) -> Any: ...
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
 
-    def Run(self,
+    def Run(
+            self,
             _: System.Func[Task],
             __: System.Threading.CancellationToken,
             ) -> Task: ...
@@ -136,23 +141,27 @@ class Task:
     def ToString(self) -> str: ...
     def Wait(self, _: int, __: System.Threading.CancellationToken) -> bool: ...
 
-    def WaitAll(self,
+    def WaitAll(
+            self,
             _: List[Task],
             __: int,
             ___: System.Threading.CancellationToken,
             ) -> bool: ...
 
-    def WaitAny(self,
+    def WaitAny(
+            self,
             _: List[Task],
             __: int,
             ___: System.Threading.CancellationToken,
             ) -> int: ...
 
-    def WhenAll(self,
+    def WhenAll(
+            self,
             _: List[Task],
             ) -> Task: ...
 
-    def WhenAny(self,
+    def WhenAny(
+            self,
             _: List[Task],
             ) -> Task[Task]: ...
 
@@ -227,7 +236,8 @@ class TaskFactory:
     @ContinuationOptions.setter
     def ContinuationOptions(self, value): ...
 
-    def ContinueWhenAll(self,
+    def ContinueWhenAll(
+            self,
             _: List[Task],
             __: Any,
             ___: System.Threading.CancellationToken,
@@ -235,7 +245,8 @@ class TaskFactory:
             _____: TaskScheduler,
             ) -> Task: ...
 
-    def ContinueWhenAny(self,
+    def ContinueWhenAny(
+            self,
             _: List[Task],
             __: System.Action[Task],
             ___: System.Threading.CancellationToken,
@@ -252,7 +263,8 @@ class TaskFactory:
     def Equals(self, _: object, __: object) -> bool: ...
     def Finalize(self) -> None: ...
 
-    def FromAsync(self,
+    def FromAsync(
+            self,
             _: System.Func[Any, object, Any],
             __: System.Action[Any],
             ___: object,
@@ -271,7 +283,8 @@ class TaskFactory:
     @Scheduler.setter
     def Scheduler(self, value): ...
 
-    def StartNew(self,
+    def StartNew(
+            self,
             _: System.Action[object],
             __: object,
             ___: System.Threading.CancellationToken,

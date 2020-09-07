@@ -118,7 +118,8 @@ class ArrayList:
     def Add(self, _: object) -> int: ...
     def AddRange(self, _: ICollection) -> None: ...
 
-    def BinarySearch(self,
+    def BinarySearch(
+            self,
             _: int,
             __: int,
             ___: object,
@@ -320,7 +321,8 @@ class Hashtable:
     def GetHash(self, _: object) -> int: ...
     def GetHashCode(self) -> int: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
@@ -365,7 +367,8 @@ class Hashtable:
     @SyncRoot.setter
     def SyncRoot(self, value): ...
 
-    def Synchronized(self,
+    def Synchronized(
+            self,
             _: Hashtable,
             ) -> Hashtable: ...
 

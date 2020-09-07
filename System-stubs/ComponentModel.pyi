@@ -125,7 +125,8 @@ class PropertyDescriptor:
     def FillAttributes(self, _: List) -> None: ...
     def Finalize(self) -> None: ...
 
-    def FindMethod(self,
+    def FindMethod(
+            self,
             _: Type,
             __: str,
             ___: List[Type],
@@ -133,7 +134,8 @@ class PropertyDescriptor:
             _____: bool,
             ) -> System.Reflection.MethodInfo: ...
 
-    def GetChildProperties(self,
+    def GetChildProperties(
+            self,
             _: object,
             __: List[System.Attribute],
             ) -> PropertyDescriptorCollection: ...
@@ -251,7 +253,8 @@ class AttributeCollection:
     def Equals(self, _: object, __: object) -> bool: ...
     def Finalize(self) -> None: ...
 
-    def FromExisting(self,
+    def FromExisting(
+            self,
             _: AttributeCollection,
             __: List[System.Attribute],
             ) -> AttributeCollection: ...
@@ -300,7 +303,8 @@ class PropertyDescriptorCollection:
     def Remove(self, _: PropertyDescriptor) -> None: ...
     def RemoveAt(self, _: int) -> None: ...
 
-    def Sort(self,
+    def Sort(
+            self,
             _: List[str],
             __: System.Collections.IComparer,
             ) -> PropertyDescriptorCollection: ...
@@ -314,52 +318,61 @@ class TypeConverter:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def CanConvertFrom(self,
+    def CanConvertFrom(
+            self,
             _: ITypeDescriptorContext,
             __: Type,
             ) -> bool: ...
 
-    def CanConvertTo(self,
+    def CanConvertTo(
+            self,
             _: ITypeDescriptorContext,
             __: Type,
             ) -> bool: ...
 
-    def ConvertFrom(self,
+    def ConvertFrom(
+            self,
             _: ITypeDescriptorContext,
             __: System.Globalization.CultureInfo,
             ___: object,
             ) -> object: ...
 
-    def ConvertFromInvariantString(self,
+    def ConvertFromInvariantString(
+            self,
             _: ITypeDescriptorContext,
             __: str,
             ) -> object: ...
 
-    def ConvertFromString(self,
+    def ConvertFromString(
+            self,
             _: ITypeDescriptorContext,
             __: System.Globalization.CultureInfo,
             ___: str,
             ) -> object: ...
 
-    def ConvertTo(self,
+    def ConvertTo(
+            self,
             _: ITypeDescriptorContext,
             __: System.Globalization.CultureInfo,
             ___: object,
             ____: Type,
             ) -> object: ...
 
-    def ConvertToInvariantString(self,
+    def ConvertToInvariantString(
+            self,
             _: ITypeDescriptorContext,
             __: object,
             ) -> str: ...
 
-    def ConvertToString(self,
+    def ConvertToString(
+            self,
             _: ITypeDescriptorContext,
             __: System.Globalization.CultureInfo,
             ___: object,
             ) -> str: ...
 
-    def CreateInstance(self,
+    def CreateInstance(
+            self,
             _: ITypeDescriptorContext,
             __: System.Collections.IDictionary,
             ) -> object: ...
@@ -369,35 +382,41 @@ class TypeConverter:
     def GetConvertFromException(self, _: object) -> Exception: ...
     def GetConvertToException(self, _: object, __: Type) -> Exception: ...
 
-    def GetCreateInstanceSupported(self,
+    def GetCreateInstanceSupported(
+            self,
             _: ITypeDescriptorContext,
             ) -> bool: ...
 
     def GetHashCode(self) -> int: ...
 
-    def GetProperties(self,
+    def GetProperties(
+            self,
             _: ITypeDescriptorContext,
             __: object,
             ___: List[System.Attribute],
             ) -> PropertyDescriptorCollection: ...
 
-    def GetPropertiesSupported(self,
+    def GetPropertiesSupported(
+            self,
             _: ITypeDescriptorContext,
             ) -> bool: ...
 
     def GetStandardValues(self, _: ITypeDescriptorContext) -> Any: ...
 
-    def GetStandardValuesExclusive(self,
+    def GetStandardValuesExclusive(
+            self,
             _: ITypeDescriptorContext,
             ) -> bool: ...
 
-    def GetStandardValuesSupported(self,
+    def GetStandardValuesSupported(
+            self,
             _: ITypeDescriptorContext,
             ) -> bool: ...
 
     def GetType(self) -> Type: ...
 
-    def IsValid(self,
+    def IsValid(
+            self,
             _: ITypeDescriptorContext,
             __: object,
             ) -> bool: ...
@@ -407,7 +426,8 @@ class TypeConverter:
     def ReferenceEquals(self, _: object, __: object) -> bool: ...
     def SimplePropertyDescriptor(self, *args, **kwargs) -> Any: ...
 
-    def SortProperties(self,
+    def SortProperties(
+            self,
             _: PropertyDescriptorCollection,
             __: List[str],
             ) -> PropertyDescriptorCollection: ...
@@ -520,7 +540,8 @@ class PropertyChangedEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: PropertyChangedEventArgs,
             ___: Any,
@@ -531,7 +552,8 @@ class PropertyChangedEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -548,14 +570,16 @@ class PropertyChangedEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
 
     def GetType(self) -> Type: ...
 
-    def Invoke(self,
+    def Invoke(
+            self,
             _: object,
             __: PropertyChangedEventArgs,
             ) -> None: ...
@@ -620,7 +644,8 @@ class CollectionChangeEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: CollectionChangeEventArgs,
             ___: Any,
@@ -631,7 +656,8 @@ class CollectionChangeEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -648,14 +674,16 @@ class CollectionChangeEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
 
     def GetType(self) -> Type: ...
 
-    def Invoke(self,
+    def Invoke(
+            self,
             _: object,
             __: CollectionChangeEventArgs,
             ) -> None: ...
@@ -736,7 +764,8 @@ class ListChangedEventHandler:
 
     def __init__(self, *args, **kwargs) -> Any: ...
 
-    def BeginInvoke(self,
+    def BeginInvoke(
+            self,
             _: object,
             __: ListChangedEventArgs,
             ___: Any,
@@ -747,7 +776,8 @@ class ListChangedEventHandler:
     def Combine(self, _: Any, __: Any) -> Any: ...
     def CombineImpl(self, _: Any) -> Any: ...
 
-    def CreateDelegate(self,
+    def CreateDelegate(
+            self,
             _: Type,
             __: object,
             ___: str,
@@ -764,7 +794,8 @@ class ListChangedEventHandler:
     def GetInvocationList(self) -> List[Any]: ...
     def GetMethodImpl(self) -> System.Reflection.MethodInfo: ...
 
-    def GetObjectData(self,
+    def GetObjectData(
+            self,
             _: System.Runtime.Serialization.SerializationInfo,
             __: System.Runtime.Serialization.StreamingContext,
             ) -> None: ...
