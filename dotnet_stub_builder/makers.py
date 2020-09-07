@@ -247,10 +247,12 @@ def walk_attrs(module: ModuleType, attr_name, converter=Converter()) -> str:
 							with buf.with_indent_size(buf.indent_size + 1):
 								buf.blankline(ensure_single=True)
 								buf.append(f"@property\ndef {child_attr_name}(self): ...")
+								buf.blankline(ensure_single=True)
 
 							with buf.with_indent_size(buf.indent_size + 1):
 								buf.blankline(ensure_single=True)
 								buf.append(f"@{child_attr_name}.setter\ndef {child_attr_name}(self, value): ...")
+								buf.blankline(ensure_single=True)
 
 							continue
 
