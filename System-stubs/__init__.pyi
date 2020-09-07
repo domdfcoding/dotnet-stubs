@@ -25,6 +25,7 @@ from .Runtime import Serialization
 from .Security import AccessControl
 from .Security import Cryptography
 from .Security import Policy
+from .Security import Principal
 from .Security.Cryptography import X509Certificates
 from .Threading import Tasks
 from .Xml import Schema

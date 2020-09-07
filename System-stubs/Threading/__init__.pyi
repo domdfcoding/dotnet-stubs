@@ -23,6 +23,7 @@ import System.Security.AccessControl
 import System.Security.Cryptography
 import System.Security.Cryptography.X509Certificates
 import System.Security.Policy
+import System.Security.Principal
 import System.Xml
 import System.Xml.Schema
 import System.Xml.Serialization

@@ -71,6 +71,7 @@ SYSTEM_MODULES = [
 		"System.Security.Cryptography",
 		"System.Security.Cryptography.X509Certificates",
 		"System.Security.Policy",
+		"System.Security.Principal",
 		"System.Threading",
 		"System.Threading.Tasks",
 		"System.Xml",

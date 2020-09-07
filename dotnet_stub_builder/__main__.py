@@ -66,6 +66,7 @@ import System.Security.AccessControl  # type: ignore
 import System.Security.Cryptography  # type: ignore
 import System.Security.Cryptography.X509Certificates  # type: ignore
 import System.Security.Policy  # type: ignore
+import System.Security.Principal  # type: ignore
 import System.Threading  # type: ignore
 import System.Threading.Tasks  # type: ignore
 import System.Xml  # type: ignore
@@ -469,7 +470,28 @@ def build_stubs():
 	make_package(
 			"System.Security.AccessControl",
 			System.Security.AccessControl,
-			["FileSecurity", "InheritanceFlags", "PropagationFlags", "AccessControlType", "AccessRule"],
+			[
+					"FileSecurity",
+					"InheritanceFlags",
+					"PropagationFlags",
+					"AccessControlType",
+					"AccessRule",
+					"AuditRule",
+					"AuditFlags",
+					"AccessControlSections",
+					"AuthorizationRuleCollection",
+					"AccessControlModification",
+					"AuthorizationRule",
+					],
+			)
+
+	# System.Security.Principal
+	make_package(
+			"System.Security.Principal",
+			System.Security.Principal,
+			[
+					"IdentityReference",
+					],
 			)
 
 	# System.Security.Cryptography.X509Certificates

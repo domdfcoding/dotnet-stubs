@@ -20,6 +20,7 @@ import System.Runtime.Serialization
 import System.Security
 import System.Security.AccessControl
 import System.Security.Policy
+import System.Security.Principal
 import System.Threading
 import System.Threading.Tasks
 import System.Xml

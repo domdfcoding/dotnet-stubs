@@ -29,6 +29,7 @@ from System.ComponentModel import MarshalByValueComponent
 from . import AccessControl
 from . import Cryptography
 from . import Policy
+from . import Principal
 from .Cryptography import X509Certificates
 
 

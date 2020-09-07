@@ -15,6 +15,7 @@ import System.Security.AccessControl
 import System.Security.Cryptography
 import System.Security.Cryptography.X509Certificates
 import System.Security.Policy
+import System.Security.Principal
 import System.Threading
 import System.Threading.Tasks
 import System.Xml
