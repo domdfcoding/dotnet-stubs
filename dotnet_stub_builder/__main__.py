@@ -512,5 +512,5 @@ def build_stubs():
 			)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	build_stubs()

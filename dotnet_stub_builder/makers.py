@@ -38,7 +38,13 @@ from domdf_python_tools.stringlist import StringList
 # this package
 from dotnet_stub_builder.type_conversion import Converter
 from dotnet_stub_builder.utils import (
-		SYSTEM_MODULES, dedup, get_child_attrs, get_signature, is_dunder, isort_config, make_property
+		SYSTEM_MODULES,
+		dedup,
+		get_child_attrs,
+		get_signature,
+		is_dunder,
+		isort_config,
+		make_property
 		)
 
 clr.AddReference("System")
@@ -90,12 +96,12 @@ def make_module(
 	"""
 
 	buf = StringList()
-	path = name.split(".")
+	path = name.split('.')
 
 	stubs_dir = PathPlus(f"{path[0]}-stubs")
 	stubs_dir.maybe_make()
-	(stubs_dir / "/".join(x for x in path[1:-1])).maybe_make(parents=True)
-	stub_file = stubs_dir / "/".join(x for x in path[1:-1]) / f"{path[-1]}.pyi"
+	(stubs_dir / '/'.join(x for x in path[1:-1])).maybe_make(parents=True)
+	stub_file = stubs_dir / '/'.join(x for x in path[1:-1]) / f"{path[-1]}.pyi"
 
 	import_name = name.replace(".__init__", '')
 
@@ -105,7 +111,7 @@ def make_module(
 				)
 		imp = re.sub(fr"import {import_name}\.([A-Za-z_]+)\.([A-Za-z_]+)", r"from .\1 import \2", imp)
 		imp = re.sub(fr"import {import_name}\.([A-Za-z_]+)", r"from . import \1", imp)
-		imp = re.sub(fr"import {import_name}$", "", imp)
+		imp = re.sub(fr"import {import_name}$", '', imp)
 		buf.append(imp)
 
 	if import_name != "System.ComponentModel":
@@ -116,8 +122,8 @@ def make_module(
 
 	for attr_name in dedup(attr_list):
 		stub_code = walk_attrs(module, attr_name, converter=converter)
-		stub_code = stub_code.replace(f": {import_name}.", ': ')
-		stub_code = stub_code.replace(f" -> {import_name}.", ' -> ')
+		stub_code = stub_code.replace(f": {import_name}.", ": ")
+		stub_code = stub_code.replace(f" -> {import_name}.", " -> ")
 		stub_code = stub_code.replace(f"[{import_name}.", '[')
 		stub_code.replace("System.Collections.Generic.IDictionary[System.String,System.String]", "Any")
 
@@ -156,10 +162,10 @@ def make_package(
 	:param attr_list: A list of attributes to create stubs for.
 	"""
 
-	path = name.split(".")
+	path = name.split('.')
 
 	stubs_dir = PathPlus(f"{path[0]}-stubs")
-	(stubs_dir / "/".join(x for x in path[1:])).maybe_make(parents=True)
+	(stubs_dir / '/'.join(x for x in path[1:])).maybe_make(parents=True)
 
 	return make_module(f"{name}.__init__", module, attr_list, converter=converter)
 
