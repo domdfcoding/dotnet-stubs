@@ -109,7 +109,7 @@ class Converter:
 				"System.IFormatProvider": "Any",
 				"System.AsyncCallback": "Any",
 				"System.Data.Common.DbDataReader": "Any",
-				"T": "Any",
+				'T': "Any",
 				"System.Collections.Generic.IComparer": "Any",
 				"SortDirection": "Any",
 				"System.Runtime.Remoting.Messaging.IMessageSink": "Any",
@@ -137,7 +137,7 @@ class Converter:
 			if container_type == "Any":
 				return "Any"
 
-			inner_type = ", ".join(self.convert_type(t.strip()) for t in m.group(3).split(","))  # type: ignore
+			inner_type = ", ".join(self.convert_type(t.strip()) for t in m.group(3).split(','))  # type: ignore
 
 			return f"{container_type}[{inner_type}]"
 
