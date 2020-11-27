@@ -1,6 +1,6 @@
 # This file is managed by 'repo_helper'. Don't edit it directly.
 ---
-name: Windows Tests
+name: Flake8
 
 on:
   push:
@@ -8,16 +8,9 @@ on:
     branches: ["master"]
 
 jobs:
-  tests:
-    name: "Python ${{ matrix.python-version }}"
-    runs-on: "windows-2019"
-    env:
-      USING_COVERAGE: '3.6'
-
-    strategy:
-      fail-fast: False
-      matrix:
-        python-version: ["3.6"]
+  Run:
+    name: "Flake8"
+    runs-on: "ubuntu-18.04"
 
     steps:
       - name: Checkout 🛎️
@@ -26,14 +19,15 @@ jobs:
       - name: Setup Python 🐍
         uses: "actions/setup-python@v2"
         with:
-          python-version: "${{ matrix.python-version }}"
+          python-version: "3.8"
 
       - name: Install dependencies 🔧
         run: |
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install --upgrade tox tox-gh-actions virtualenv
+          python -m pip install flake8-prettycount
+          python -m pip install .
 
-      - name: "Run Tests for Python ${{ matrix.python-version }}"
-        run: "python -m tox"
+      - name: "Run Flake8"
+        run: "python -m flake8_prettycount flake8_github_action --format github"
