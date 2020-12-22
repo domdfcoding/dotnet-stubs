@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 #
 #  type_conversion.py
+"""
+Convert types from .NET/C# to Python.
+"""
 #
 #  Copyright © 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
@@ -117,6 +120,12 @@ class Converter:
 				}
 
 	def convert_type(self, csharp_type: str) -> str:
+		"""
+		Convert the given C# type to its Python equivalent (as a string).
+
+		:param csharp_type:
+		"""
+
 		csharp_type = re.sub(" ByRef$", '', csharp_type)
 
 		if csharp_type in self.type_mapping:

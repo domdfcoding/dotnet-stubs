@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 #
 #  makers.py
+"""
+Functions for creating imports, modules and packages.
+"""
 #
 #  Copyright © 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
@@ -50,7 +53,7 @@ from dotnet_stub_builder.utils import (
 clr.AddReference("System")
 
 # 3rd party
-import System  # type: ignore
+import System  # type: ignore  # noqa: E402
 
 __all__ = ["make_imports", "make_module", "make_package", "walk_attrs"]
 

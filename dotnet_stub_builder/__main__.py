@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 #
 #  __main__.py
+"""
+CLI entry point.
+"""
 #
 #  Copyright © 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
@@ -48,35 +51,39 @@ clr.AddReference("System.Xml")
 clr.AddReference("System.Xml.Serialization")
 
 # 3rd party
-import System  # type: ignore
-import System.Collections  # type: ignore
-import System.Configuration  # type: ignore
-import System.Configuration.Assemblies  # type: ignore
-import System.Data  # type: ignore
-import System.Globalization  # type: ignore
-import System.IO  # type: ignore
-import System.Reflection  # type: ignore
-import System.Runtime  # type: ignore
-import System.Runtime.CompilerServices  # type: ignore
-import System.Runtime.InteropServices  # type: ignore
-import System.Runtime.Remoting  # type: ignore
-import System.Runtime.Serialization  # type: ignore
-import System.Security  # type: ignore
-import System.Security.AccessControl  # type: ignore
-import System.Security.Cryptography  # type: ignore
-import System.Security.Cryptography.X509Certificates  # type: ignore
-import System.Security.Policy  # type: ignore
-import System.Security.Principal  # type: ignore
-import System.Threading  # type: ignore
-import System.Threading.Tasks  # type: ignore
-import System.Xml  # type: ignore
-import System.Xml.Schema  # type: ignore
-import System.Xml.Serialization  # type: ignore
+import System  # type: ignore  # noqa: E402
+import System.Collections  # type: ignore  # noqa: E402
+import System.Configuration  # type: ignore  # noqa: E402
+import System.Configuration.Assemblies  # type: ignore  # noqa: E402
+import System.Data  # type: ignore  # noqa: E402
+import System.Globalization  # type: ignore  # noqa: E402
+import System.IO  # type: ignore  # noqa: E402
+import System.Reflection  # type: ignore  # noqa: E402
+import System.Runtime  # type: ignore  # noqa: E402
+import System.Runtime.CompilerServices  # type: ignore  # noqa: E402
+import System.Runtime.InteropServices  # type: ignore  # noqa: E402
+import System.Runtime.Remoting  # type: ignore  # noqa: E402
+import System.Runtime.Serialization  # type: ignore  # noqa: E402
+import System.Security  # type: ignore  # noqa: E402
+import System.Security.AccessControl  # type: ignore  # noqa: E402
+import System.Security.Cryptography  # type: ignore  # noqa: E402
+import System.Security.Cryptography.X509Certificates  # type: ignore  # noqa: E402
+import System.Security.Policy  # type: ignore  # noqa: E402
+import System.Security.Principal  # type: ignore  # noqa: E402
+import System.Threading  # type: ignore  # noqa: E402
+import System.Threading.Tasks  # type: ignore  # noqa: E402
+import System.Xml  # type: ignore  # noqa: E402
+import System.Xml.Schema  # type: ignore  # noqa: E402
+import System.Xml.Serialization  # type: ignore  # noqa: E402
 
 __all__ = ["build_stubs"]
 
 
 def build_stubs():
+	"""
+	Build the stubs for the .NET "System" package.
+	"""
+
 	# System
 	system_stubs_dir = PathPlus("System-stubs")
 	system_stubs_dir.maybe_make()
