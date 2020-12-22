@@ -79,12 +79,11 @@ def get_signature(
 		converter: Converter,
 		) -> Tuple[str, Optional[str]]:
 	"""
+	Returns the signature of the given object, as a two element tuple of return type and arguments.
 
 	:param obj:
 	:param obj_name:
 	:param converter:
-
-	:return:
 	"""
 
 	return_type: str = "Any"
@@ -112,7 +111,7 @@ def make_property(buf: StringList, name: str) -> None:
 
 	:param buf:
 	:param name:
-	"""
+	"""  # noqa: D400
 
 	with buf.with_indent_size(buf.indent_size + 1):
 		buf.blankline(ensure_single=True)
