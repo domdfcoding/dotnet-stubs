@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-
+# 3rd party
 import System
 import System.Collections
 import System.ComponentModel
@@ -26,4 +26,5 @@ import System.Xml.Schema
 import System.Xml.Serialization
 from System.ComponentModel import MarshalByValueComponent
 
+# this package
 from . import Assemblies

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-
+# 3rd party
 import System
 import System.Collections
 import System.ComponentModel
@@ -23,7 +23,5 @@ import System.Xml.Schema
 import System.Xml.Serialization
 from System.ComponentModel import MarshalByValueComponent
 
-from . import CompilerServices
-from . import InteropServices
-from . import Remoting
-from . import Serialization
+# this package
+from . import CompilerServices, InteropServices, Remoting, Serialization
