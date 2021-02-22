@@ -31,7 +31,6 @@ import System.Xml.Serialization
 from System.ComponentModel import MarshalByValueComponent
 
 class ObjRef:
-
 	def __init__(self, *args, **kwargs) -> Any: ...
 
 	@property
@@ -87,7 +86,6 @@ class ObjRef:
 	def set_URI(self, _: str) -> None: ...
 
 class IChannelInfo:
-
 	def __init__(self, *args, **kwargs) -> Any: ...
 
 	@property
@@ -100,7 +98,6 @@ class IChannelInfo:
 	def set_ChannelData(self, _: List[object]) -> None: ...
 
 class IEnvoyInfo:
-
 	def __init__(self, *args, **kwargs) -> Any: ...
 
 	@property
@@ -113,7 +110,6 @@ class IEnvoyInfo:
 	def set_EnvoySinks(self, _: Any) -> None: ...
 
 class IRemotingTypeInfo:
-
 	def __init__(self, *args, **kwargs) -> Any: ...
 	def CanCastTo(self, _: Type, __: object) -> bool: ...
 
