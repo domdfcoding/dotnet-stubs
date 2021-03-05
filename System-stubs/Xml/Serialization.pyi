@@ -31,7 +31,6 @@ import System.Xml.Schema
 from System.ComponentModel import MarshalByValueComponent
 
 class XmlSerializerNamespaces:
-
 	def __init__(self, *args, **kwargs) -> Any: ...
 	def Add(self, _: str, __: str) -> None: ...
 
