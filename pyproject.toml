@@ -7,14 +7,14 @@ name = "dotnet-stubs"
 version = "0.0.12"
 description = "Incomplete, and probably incorrect, stubs for .NET"
 readme = "README.rst"
-requires-python = ">=3.6.1"
+requires-python = ">=3.8"
 keywords = []
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 dynamic = [ "dependencies",]
@@ -45,14 +45,14 @@ platforms = [ "Windows", "macOS", "Linux",]
 
 [tool.whey]
 base-classifiers = []
-python-versions = [ "3.6",]
+python-versions = [ "3.8",]
 python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
 license-key = "MIT"
 package = "dotnet_stub_builder-stubs"
 
 [tool.mypy]
-python_version = "3.6"
+python_version = "3.8"
 namespace_packages = true
 check_untyped_defs = true
 warn_unused_ignores = true
