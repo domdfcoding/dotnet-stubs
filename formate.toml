@@ -41,4 +41,4 @@ known_third_party = [
     "pytest_rerunfailures",
     "requests",
 ]
-known_first_party = "dotnet_stub_builder"
+known_first_party = [ "dotnet_stub_builder",]
