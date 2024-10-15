@@ -2,6 +2,39 @@
 requires = [ "setuptools!=61.*,<=67.1.0,>=40.6.0", "wheel>=0.34.2",]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "dotnet-stubs"
+version = "0.0.12"
+description = "Incomplete, and probably incorrect, stubs for .NET"
+readme = "README.rst"
+requires-python = ">=3.8"
+keywords = []
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+dynamic = [ "dependencies",]
+
+[project.license]
+file = "LICENSE"
+
+[[project.authors]]
+name = "Dominic Davis-Foster"
+email = "dominic@davis-foster.co.uk"
+
+[project.urls]
+Homepage = "https://github.com/domdfcoding/dotnet-stubs"
+"Issue Tracker" = "https://github.com/domdfcoding/dotnet-stubs/issues"
+"Source Code" = "https://github.com/domdfcoding/dotnet-stubs"
+
+[project.optional-dependencies]
+builder = [ "autoflake", "domdf-python-tools>=0.7.0", "isort>=5.0.0", "orderedset", "pythonnet",]
+all = [ "autoflake", "domdf-python-tools>=0.7.0", "isort>=5.0.0", "orderedset", "pythonnet",]
+
 [tool.importcheck]
 
 [tool.setuptools]
@@ -40,36 +73,3 @@ reformat = true
 [tool.snippet-fmt.languages.ini]
 
 [tool.snippet-fmt.languages.json]
-
-[project]
-name = "dotnet-stubs"
-version = "0.0.12"
-description = "Incomplete, and probably incorrect, stubs for .NET"
-readme = "README.rst"
-requires-python = ">=3.8"
-keywords = []
-classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: Implementation :: CPython",
-]
-dynamic = [ "dependencies",]
-
-[project.license]
-file = "LICENSE"
-
-[[project.authors]]
-name = "Dominic Davis-Foster"
-email = "dominic@davis-foster.co.uk"
-
-[project.urls]
-Homepage = "https://github.com/domdfcoding/dotnet-stubs"
-"Issue Tracker" = "https://github.com/domdfcoding/dotnet-stubs/issues"
-"Source Code" = "https://github.com/domdfcoding/dotnet-stubs"
-
-[project.optional-dependencies]
-builder = [ "autoflake", "domdf-python-tools>=0.7.0", "isort>=5.0.0", "orderedset", "pythonnet",]
-all = [ "autoflake", "domdf-python-tools>=0.7.0", "isort>=5.0.0", "orderedset", "pythonnet",]
