@@ -25,7 +25,6 @@ extras_require:
     - autoflake
 
 exclude_files:
-  - tox
   - manifest
   - setup_cfg
   - setup
