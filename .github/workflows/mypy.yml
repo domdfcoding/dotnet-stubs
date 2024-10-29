@@ -4,8 +4,14 @@ name: mypy
 
 on:
   push:
+    branches-ignore:
+      - 'repo-helper-update'
+      - 'pre-commit-ci-update-config'
+      - 'imgbot'
   pull_request:
-    branches: ["master"]
+
+permissions:
+  contents: read
 
 jobs:
   Run:
@@ -14,24 +20,35 @@ jobs:
 
     strategy:
       matrix:
-        os: ['windows-2019', 'macos-latest', 'ubuntu-20.04']
+        os: ['ubuntu-20.04', 'windows-2019']
       fail-fast: false
 
     steps:
       - name: Checkout 🛎️
-        uses: "actions/checkout@v2"
+        uses: "actions/checkout@v4"
+
+      - name: Check for changed files
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          list-files: "json"
+          filters: |
+            code:
+              - '!(doc-source/**|CONTRIBUTING.rst|.imgbotconfig|.pre-commit-config.yaml|.pylintrc|.readthedocs.yml)'
 
       - name: Setup Python 🐍
-        uses: "actions/setup-python@v2"
+        if: steps.changes.outputs.code == 'true'
+        uses: "actions/setup-python@v5"
         with:
-          python-version: "3.6"
+          python-version: "3.8"
 
       - name: Install dependencies 🔧
         run: |
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install --upgrade tox virtualenv
+          python -m pip install --upgrade tox~=3.0 virtualenv!=20.16.0
 
       - name: "Run mypy"
-        run: "python -m tox -e mypy"
+        if: steps.changes.outputs.code == 'true'
+        run: "python -m tox -e mypy -s false"

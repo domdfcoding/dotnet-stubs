@@ -4,29 +4,47 @@ name: Flake8
 
 on:
   push:
+    branches-ignore:
+      - 'repo-helper-update'
+      - 'pre-commit-ci-update-config'
+      - 'imgbot'
   pull_request:
-    branches: ["master"]
+
+permissions:
+  contents: read
 
 jobs:
   Run:
     name: "Flake8"
-    runs-on: "ubuntu-18.04"
+    runs-on: "ubuntu-20.04"
 
     steps:
       - name: Checkout 🛎️
-        uses: "actions/checkout@v2"
+        uses: "actions/checkout@v4"
+
+      - name: Check for changed files
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          list-files: "json"
+          filters: |
+            code:
+              - '!(doc-source/**|CONTRIBUTING.rst|.imgbotconfig|.pre-commit-config.yaml|.pylintrc|.readthedocs.yml)'
 
       - name: Setup Python 🐍
-        uses: "actions/setup-python@v2"
+        if: steps.changes.outputs.code == 'true'
+        uses: "actions/setup-python@v5"
         with:
           python-version: "3.8"
 
       - name: Install dependencies 🔧
+        if: steps.changes.outputs.code == 'true'
         run: |
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel
-          python -m pip install tox
+          python -m pip install tox~=3.0
 
       - name: "Run Flake8"
-        run: "python -m tox -e lint -- --format github"
+        if: steps.changes.outputs.code == 'true'
+        run: "python -m tox -e lint -s false -- --format github"
