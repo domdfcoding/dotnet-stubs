@@ -28,3 +28,10 @@ exclude_files:
   - manifest
   - setup_cfg
   - setup
+
+tox_unmanaged:
+  - testenv:build
+  - testenv:lint
+  - testenv:mypy
+  - testenv:pyup
+  - check-wheel-contents
