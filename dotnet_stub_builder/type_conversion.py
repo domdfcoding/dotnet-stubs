@@ -40,7 +40,7 @@ class Converter:
 	Class to convert .NET types into Python types.
 	"""
 
-	def __init__(self, extra_mappings: Optional[Dict[str, str]] = None):
+	def __init__(self, extra_mappings: Optional[dict[str, str]] = None):
 		if extra_mappings is None:
 			extra_mappings = {}
 
