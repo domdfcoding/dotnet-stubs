@@ -23,13 +23,13 @@ jobs:
     runs-on: "ubuntu-22.04"
     continue-on-error: ${{ matrix.config.experimental }}
     env:
-      USING_COVERAGE: '3.8'
+      USING_COVERAGE: '3.9'
 
     strategy:
       fail-fast: False
       matrix:
         config:
-          - {python-version: "3.8", testenvs: "py38,build", experimental: False}
+          - {python-version: "3.9", testenvs: "py39,build", experimental: False}
 
     steps:
       - name: Checkout 🛎️
@@ -95,7 +95,7 @@ jobs:
 
       - name: Upload distribution to PyPI 🚀
         if: startsWith(github.ref, 'refs/tags/')
-        uses: pypa/gh-action-pypi-publish@v1.4.2
+        uses: pypa/gh-action-pypi-publish@v1.13.0
         with:
           user: __token__
           password: ${{ secrets.PYPI_TOKEN }}

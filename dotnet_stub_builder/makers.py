@@ -28,8 +28,9 @@ Functions for creating imports, modules and packages.
 
 # stdlib
 import re
+from collections.abc import Iterable
 from types import FunctionType, ModuleType
-from typing import Any, Iterable, List
+from typing import Any, List
 
 # 3rd party
 import clr  # type: ignore
@@ -58,7 +59,7 @@ import System  # type: ignore  # noqa: E402
 __all__ = ["make_imports", "make_module", "make_package", "walk_attrs"]
 
 
-def make_imports(current_module_name: str) -> List[str]:
+def make_imports(current_module_name: str) -> list[str]:
 	"""
 	Create the imports for the top of a stub file.
 

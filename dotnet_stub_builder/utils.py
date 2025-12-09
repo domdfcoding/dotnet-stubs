@@ -29,7 +29,8 @@ General utility functions.
 # stdlib
 import re
 import string
-from typing import Iterable, Iterator, List, Optional, Tuple, Type
+from collections.abc import Iterable, Iterator
+from typing import List, Optional, Tuple, Type
 
 # 3rd party
 from domdf_python_tools.stringlist import StringList
@@ -53,7 +54,7 @@ __all__ = [
 		]
 
 
-def dedup(iterable: Iterable[str]) -> List:
+def dedup(iterable: Iterable[str]) -> list:
 	"""
 	Return the given iterable sans duplicates.
 
@@ -74,10 +75,10 @@ def is_dunder(attr_name: str) -> bool:
 
 
 def get_signature(
-		obj: Type,
+		obj: type,
 		obj_name: str,
 		converter: Converter,
-		) -> Tuple[str, Optional[str]]:
+		) -> tuple[str, Optional[str]]:
 	"""
 	Returns the signature of the given object, as a two element tuple of return type and arguments.
 
@@ -124,7 +125,7 @@ def make_property(buf: StringList, name: str) -> None:
 		buf.blankline(ensure_single=True)
 
 
-def get_child_attrs(obj: Type) -> Iterator[str]:
+def get_child_attrs(obj: type) -> Iterator[str]:
 	"""
 	Returns a list of child attributes for the given object.
 
