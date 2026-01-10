@@ -89,7 +89,7 @@ dotnet-stubs
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/dotnet-stubs
-	:target: https://pypi.org/project/dotnet-stubs/
+	:target: https://pypistats.org/packages/dotnet-stubs
 	:alt: PyPI - Downloads
 
 .. end shields
