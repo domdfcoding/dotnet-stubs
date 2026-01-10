@@ -118,7 +118,7 @@ def build_stubs():
 					"Attribute",
 					"DayOfWeek",
 					"DateTimeOffset",
-					]
+					],
 			)
 
 	# System.Data
@@ -174,7 +174,7 @@ def build_stubs():
 					"UniqueConstraint",
 					"Rule",
 					"SchemaSerializationMode",
-					]
+					],
 			)
 
 	# System.Xml
@@ -224,7 +224,7 @@ def build_stubs():
 					"XmlImplementation",
 					"XmlNodeChangedEventArgs",
 					"XmlNodeChangedAction",
-					]
+					],
 			)
 
 	# System.Xml.Schema
@@ -264,7 +264,7 @@ def build_stubs():
 					"XmlSchemaElement",
 					"XmlSchemaAttribute",
 					"XmlSchemaUse",
-					]
+					],
 			)
 
 	# System.Xml.Serialization
@@ -289,33 +289,36 @@ def build_stubs():
 					"SerializationInfoEnumerator",
 					"SafeSerializationEventArgs",
 					"ISafeSerializationData",
-					]
+					],
 			)
 
 	# System.Runtime.CompilerServices
 	make_module(
 			"System.Runtime.CompilerServices",
-			System.Runtime.CompilerServices, ["ConfiguredTaskAwaitable", "TaskAwaiter", "YieldAwaitable"]
+			System.Runtime.CompilerServices,
+			["ConfiguredTaskAwaitable", "TaskAwaiter", "YieldAwaitable"],
 			)
 
 	# System.Runtime.Remoting
 	make_module(
 			"System.Runtime.Remoting",
-			System.Runtime.Remoting, [
+			System.Runtime.Remoting,
+			[
 					"ObjRef",
 					"IChannelInfo",
 					"IEnvoyInfo",
 					"IRemotingTypeInfo",
-					]
+					],
 			)
 
 	# System.Runtime.InteropServices
 	make_module(
 			"System.Runtime.InteropServices",
-			System.Runtime.InteropServices, [
+			System.Runtime.InteropServices,
+			[
 					"StructLayoutAttribute",
 					"LayoutKind",
-					]
+					],
 			)
 
 	# System.Collections
@@ -334,7 +337,7 @@ def build_stubs():
 					"Hashtable",
 					"DictionaryEntry",
 					"IList",
-					]
+					],
 			)
 
 	# System.Globalization
@@ -348,7 +351,7 @@ def build_stubs():
 					"DateTimeStyles",
 					"DigitShapes",
 					"TimeSpanStyles",
-					]
+					],
 			)
 
 	# System.ComponentModel
@@ -376,17 +379,21 @@ def build_stubs():
 					"IComponent",
 					"ComponentCollection",
 					"ListChangedType",
-					]
+					],
 			)
 
 	# System.IO
-	make_module("System.IO", System.IO, [
-			"Stream",
-			"TextReader",
-			"SeekOrigin",
-			"FileStream",
-			"TextWriter",
-			])
+	make_module(
+			"System.IO",
+			System.IO,
+			[
+					"Stream",
+					"TextReader",
+					"SeekOrigin",
+					"FileStream",
+					"TextWriter",
+					],
+			)
 
 	# System.Threading
 	make_package(
@@ -457,7 +464,7 @@ def build_stubs():
 					"AssemblyName",
 					"AssemblyNameFlags",
 					"StrongNameKeyPair",
-					]
+					],
 			)
 
 	# System.Security
