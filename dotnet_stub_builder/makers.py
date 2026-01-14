@@ -88,7 +88,7 @@ def make_module(
 		module: ModuleType,
 		attr_list: Iterable[str] = (),
 		first_party_imports: Iterable[str] = (),
-		converter=Converter()
+		converter=Converter(),
 		) -> bool:
 	"""
 	Create type stubs for a module.
@@ -111,7 +111,9 @@ def make_module(
 
 	for imp in (*make_imports(name), *first_party_imports):
 		imp = re.sub(
-				fr"import {import_name}\.([A-Za-z_]+)\.([A-Za-z_]+)\.([A-Za-z_]+)", r"from .\1.\2 import \3", imp
+				fr"import {import_name}\.([A-Za-z_]+)\.([A-Za-z_]+)\.([A-Za-z_]+)",
+				r"from .\1.\2 import \3",
+				imp,
 				)
 		imp = re.sub(fr"import {import_name}\.([A-Za-z_]+)\.([A-Za-z_]+)", r"from .\1 import \2", imp)
 		imp = re.sub(fr"import {import_name}\.([A-Za-z_]+)", r"from . import \1", imp)
